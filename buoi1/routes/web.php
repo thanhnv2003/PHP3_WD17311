@@ -18,3 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('index', [TestController::class, 'index']);
+Route::post('index', [TestController::class, 'index']);
+//Route::get('add', [TestController::class, 'add']);
+//Route::post('add', [TestController::class, 'add']);
+Route::match(['GET','POST'],'add',[TestController::class, 'add']);
