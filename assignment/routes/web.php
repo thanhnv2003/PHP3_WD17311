@@ -1,6 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('client.home');
 });
+Route::prefix('wp-admin')->group(function (){
+    Route::get('/', [HomeController::class,'index'])->name('admin');
+    Route::get('categories', [CategoriesController::class, 'list'])->name('cate.list');
+    Route::match(['GET', 'POST'],'categories-add', [CategoriesController::class, 'add'])->name('cate.add');
+});
+
+
