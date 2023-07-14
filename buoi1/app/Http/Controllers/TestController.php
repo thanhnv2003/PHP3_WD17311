@@ -7,6 +7,7 @@ use App\Models\tests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Session;
 
 class TestController extends Controller
 {
@@ -42,16 +43,55 @@ class TestController extends Controller
     public function add(TestRequest $request){
         // nếu như tồn tại repuest post
         if ($request->post()){
-            $value = [
-                'name' => $request->fullname,
-                'email' => $request->email,
-                'address' => $request->address,
-                'date_of_birth' => $request->birthday
-            ];
-//            dd($request);
-            DB::table('tests')->insert($value);
+//            $value = [
+//                'name' => $request->fullname,
+//                'email' => $request->email,
+//                'address' => $request->address,
+//                'date_of_birth' => $request->birthday
+//            ];
+////            dd($request);
+//            DB::table('tests')->insert($value);
+            //lấy tất cả dữ liệu trừ token
+//            dd($request->except('_token'));
+//            die();
+            $data = tests::create($request->except('_token'));
+
+
+//            dd($data);
+            if ($data->id){
+                Session::flash('success', 'Thêm mới thành công sinh viên');
+                return redirect()->route('add');
+            }
         }
         return view('test.add');
     }
+
+    public function edit(TestRequest $request, $id){
+//        dd($id);
+        //cách 1
+//        $value = DB::table('tests')->where('id', $id)->get();
+        //cách 2
+        $value = tests::find($id);
+//        dd($value);
+        if ($request->post()){
+            $data = tests::find($id);
+//            $data = tests::updated($request->except('_token'));
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->address = $request->address;
+            $data->date_of_birth = $request->date_of_birth;
+            Session::flash('success', 'Cập nhật thành công sinh viên ID: '.$request->id);
+            $data->save();
+            return redirect()->route('index');
+
+        }
+        return view('test.edit', compact('value'));
+    }
+    public function delete($id){
+        $data = tests::find($id);
+        $data->delete();
+        return redirect()->route('index');
+    }
+
 
 }

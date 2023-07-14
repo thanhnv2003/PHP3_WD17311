@@ -17,8 +17,14 @@ use App\Http\Controllers\TestController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('index', [TestController::class, 'index']);
+Route::get('index', [TestController::class, 'index'])->name('index');
 Route::post('index', [TestController::class, 'index']);
 //Route::get('add', [TestController::class, 'add']);
 //Route::post('add', [TestController::class, 'add']);
-Route::match(['GET','POST'],'add',[TestController::class, 'add']);
+
+//chuẩn đặt route
+//Route::post('/student/add', [TestController::class, 'index'])->name('route_student_add');
+
+Route::match(['GET','POST'],'add',[TestController::class, 'add'])->name('add');
+Route::match(['GET','POST'],'edit/{id}',[TestController::class, 'edit'])->name('edit');
+Route::get('delete/{id}', [TestController::class, 'delete'])->name('delete');

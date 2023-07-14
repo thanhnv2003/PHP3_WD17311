@@ -125,6 +125,8 @@
       <path value="$PROJECT_DIR$/buoi1/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/buoi1/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/buoi1/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/buoi1/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/buoi1/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

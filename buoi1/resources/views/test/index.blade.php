@@ -14,6 +14,7 @@
         <td>ADDRESS</td>
         <td>DATE_BIRTH</td>
         <td>CREATED_AT</td>
+        <td>FUNCITIONS</td>
     </tr>
     @foreach($data as $key => $value)
     <tr>
@@ -23,7 +24,10 @@
         <td>{{$value->address}}</td>
         <td>{{$value->date_of_birth}}</td>
         <td>{{$value->created_at}}</td>
-
+        <td>
+            <a href="{{route('edit', [$value->id])}}">Sửa</a>
+            <a href="{{route('delete',[$value->id])}}">Xóa</a>
+        </td>
     </tr>
     @endforeach
 

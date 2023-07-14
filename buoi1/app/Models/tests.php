@@ -12,11 +12,11 @@ class tests extends Model
     //ánh xạ
     protected $table = 'tests'; //phải điền đúng tên bảng mà mình cần trỏ tới trong CSDL
 
-//    protected $fillable = [
-//        'name',
-//        'email',
-//        'address',
-//        'date_of_birth'
-//    ];
+    protected $fillable = [
+        'name',
+        'email',
+        'address',
+        'date_of_birth'
+    ];
 
 }

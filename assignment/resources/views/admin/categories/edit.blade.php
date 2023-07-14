@@ -34,7 +34,7 @@
                         class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
-                                <form action="{{route('cate.add')}}" method="post">
+                                <form action="{{route('cate.edit',[$value[0]->id])}}" method="post">
                                     @csrf
                                     <div class="mx-sm-30 mx-20 ">
 
@@ -46,11 +46,11 @@
 
                                                 <div class="add-product__body px-sm-40 px-20">
 
-                                                        <div class="form-group">
-                                                            <label for="name1">category name</label>
-                                                            <input type="text" class="form-control" name="catename"
-                                                                   placeholder="Nhập dữ liệu">
-                                                        </div>
+                                                    <div class="form-group">
+                                                        <label for="name1">category name</label>
+                                                        <input type="text" class="form-control" name="catename" value="{{$value[0]->name}}"
+                                                               placeholder="Nhập dữ liệu">
+                                                    </div>
 
                                                 </div>
 
@@ -62,7 +62,7 @@
                                         <div
                                             class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                             <button type="reset"
-                                                class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                                    class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
                                             </button>
                                             <input type="submit" class="btn btn-primary btn-default btn-squared text-capitalize" value="save category">
                                         </div>
@@ -81,3 +81,4 @@
         </div>
     </div>
 @endsection
+

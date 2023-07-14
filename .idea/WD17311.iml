@@ -121,6 +121,8 @@
       <excludeFolder url="file://$MODULE_DIR$/buoi1/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/buoi1/vendor/fruitcake/laravel-cors" />
       <excludeFolder url="file://$MODULE_DIR$/buoi1/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/buoi1/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/buoi1/vendor/maximebf/debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
