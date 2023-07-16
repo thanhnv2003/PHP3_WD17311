@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HexaDash</title>
     @include('admin.layout.css')
+
 </head>
 
 <body class="layout-light side-menu">
@@ -40,7 +41,7 @@
 {{--<div class="customizer-overlay"></div>--}}
 
 @include('admin.layout.js')
-
+@stack('javascipts')
 </body>
 
 <!-- Mirrored from demo.dashboardmarket.com/hexadash-html/ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jan 2023 10:48:03 GMT -->

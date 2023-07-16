@@ -20,9 +20,11 @@ Route::get('/', function () {
 });
 Route::prefix('wp-admin')->group(function (){
     Route::get('/', [HomeController::class,'index'])->name('admin');
+
     Route::get('categories', [CategoriesController::class, 'list'])->name('cate.list');
-    Route::match(['GET', 'POST'],'categories-add', [CategoriesController::class, 'add'])->name('cate.add');
-    Route::match(['GET', 'POST'],'categories-edit/{id}', [CategoriesController::class, 'edit'])->name('cate.edit');
+    Route::match(['GET', 'POST'],'categories/add', [CategoriesController::class, 'add'])->name('cate.add');
+    Route::match(['GET', 'POST'],'categories/edit/{id}', [CategoriesController::class, 'edit'])->name('cate.edit');
+    Route::get('categories/delete/{id}', [CategoriesController::class, 'delete'])->name('cate.delete');
 });
 
 

@@ -83,7 +83,7 @@
                                     <thead>
                                     <tr class="userDatatable-header">
                                         <th>
-                                            <span class="userDatatable-title">ID</span>
+                                            <span class="userDatatable-title">STT</span>
                                         </th>
                                         <th>
                                             <span class="userDatatable-title">Name</span>
@@ -100,13 +100,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($data as $key => $value)
                                     <tr>
-                                        <td>#01</td>
+                                        <td>{{$key + 1}}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <div class="userDatatable-inline-title">
                                                     <a href="#" class="text-dark fw-500">
-                                                        <h6>Kellie Marquot</h6>
+                                                        <h6>{{$value->name}}</h6>
                                                     </a>
                                                 </div>
                                             </div>
@@ -115,7 +116,7 @@
                                             <div class="d-flex">
                                                 <div class="userDatatable-inline-title">
                                                     <a href="#" class="text-dark fw-500">
-                                                        <h6>Kellie Marquot</h6>
+                                                        <h6>{{date('d-m-Y H:i:s', strtotime($value->created_at))}}</h6>
                                                     </a>
                                                 </div>
                                             </div>
@@ -124,31 +125,28 @@
                                             <div class="d-flex">
                                                 <div class="userDatatable-inline-title">
                                                     <a href="#" class="text-dark fw-500">
-                                                        <h6>Kellie Marquot</h6>
+                                                        <h6>{{date('d-m-Y H:i:s', strtotime($value->updated_at))}}</h6>
                                                     </a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                             <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
+{{--                                                <li>--}}
+{{--                                                    <a href="#" class="view">--}}
+{{--                                                        <i class="uil uil-setting"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                </li>--}}
                                                 <li>
-                                                    <a href="#" class="view">
-                                                        <i class="uil uil-setting"></i>
-                                                    </a>
+                                                    <a class="btn btn-secondary mx-1" href="{{route('cate.edit', [$value->id])}}" >Sửa</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="edit">
-                                                        <i class="uil uil-edit"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="remove">
-                                                        <i class="uil uil-trash-alt"></i>
-                                                    </a>
+                                                    <a class="btn btn-danger btn-squared" onclick="deletItem({{$value->id}})">Xóa</a>
                                                 </li>
                                             </ul>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -156,32 +154,36 @@
                                 <nav class="dm-page ">
                                     <ul class="dm-pagination d-flex">
                                         <li class="dm-pagination__item">
-                                            <a href="#" class="dm-pagination__link pagination-control"><span
-                                                    class="la la-angle-left"></span></a>
-                                            <a href="#" class="dm-pagination__link"><span
-                                                    class="page-number">1</span></a>
-                                            <a href="#" class="dm-pagination__link active"><span
-                                                    class="page-number">2</span></a>
-                                            <a href="#" class="dm-pagination__link"><span
-                                                    class="page-number">3</span></a>
-                                            <a href="#" class="dm-pagination__link pagination-control"><span
-                                                    class="page-number">...</span></a>
-                                            <a href="#" class="dm-pagination__link"><span
-                                                    class="page-number">12</span></a>
-                                            <a href="#" class="dm-pagination__link pagination-control"><span
-                                                    class="la la-angle-right"></span></a>
-                                            <a href="#" class="dm-pagination__option">
-                                            </a>
+
+{{--                                            <a href="#" class="dm-pagination__link pagination-control"><span--}}
+{{--                                                    class="la la-angle-left"></span></a>--}}
+                                            @foreach($data->links()->elements[0] as $key => $value)
+                                                <a href="{{$value}}" class="dm-pagination__link"><span
+                                                        class="page-number"></span>{{$key}}</a>
+                                            @endforeach
+
+{{--                                            <a href="#" class="dm-pagination__link active"><span--}}
+{{--                                                    class="page-number">2</span></a>--}}
+{{--                                            <a href="#" class="dm-pagination__link"><span--}}
+{{--                                                    class="page-number">3</span></a>--}}
+{{--                                            <a href="#" class="dm-pagination__link pagination-control"><span--}}
+{{--                                                    class="page-number">...</span></a>--}}
+{{--                                            <a href="#" class="dm-pagination__link"><span--}}
+{{--                                                    class="page-number">12</span></a>--}}
+{{--                                            <a href="#" class="dm-pagination__link pagination-control"><span--}}
+{{--                                                    class="la la-angle-right"></span></a>--}}
+{{--                                            <a href="#" class="dm-pagination__option">--}}
+{{--                                            </a>--}}
                                         </li>
-                                        <li class="dm-pagination__item">
-                                            <div class="paging-option">
-                                                <select name="page-number" class="page-selection">
-                                                    <option value="20">20/page</option>
-                                                    <option value="40">40/page</option>
-                                                    <option value="60">60/page</option>
-                                                </select>
-                                            </div>
-                                        </li>
+{{--                                        <li class="dm-pagination__item">--}}
+{{--                                            <div class="paging-option">--}}
+{{--                                                <select name="page-number" class="page-selection">--}}
+{{--                                                    <option value="20">20/page</option>--}}
+{{--                                                    <option value="40">40/page</option>--}}
+{{--                                                    <option value="60">60/page</option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
                                     </ul>
                                 </nav>
                             </div>
@@ -191,4 +193,36 @@
             </div>
         </div>
     </div>
+
 @endsection
+@push('javascipts')
+    <script>
+        function deletItem(id){
+            Swal.fire({
+                title: 'Bạn chắc chắn?',
+                text: "Bạn có chắc chắn muốn xóa không ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `{{url('wp-admin/categories/delete')}}`+`/`+ id;
+                }
+            })
+        }
+    </script>
+    @if(Session::has('success'))
+        <script>
+            Swal.fire(
+                'Thông báo!',
+                '{{Session::get('success')}}',
+                'success'
+            )
+            window.setTimeout(function(){
+                window.location.href = '{{ route('cate.list') }}';
+            },1500)
+        </script>
+    @endif
+@endpush
