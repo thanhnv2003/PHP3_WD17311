@@ -22,11 +22,6 @@
             </div>
         </div>
         <div class="container-fluid">
-            @if(Session::has('success'))
-                <script>
-                    alert("{{Session::get('success')}}}");
-                </script>
-            @endif
             <div class="row">
                 <div class="col-lg-12">
 

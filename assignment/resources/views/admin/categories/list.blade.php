@@ -220,9 +220,6 @@
                 '{{Session::get('success')}}',
                 'success'
             )
-            window.setTimeout(function(){
-                window.location.href = '{{ route('cate.list') }}';
-            },1500)
         </script>
     @endif
 @endpush
