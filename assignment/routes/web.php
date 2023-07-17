@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoriesController;
-
+use App\Http\Controllers\Admin\BrandsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,11 @@ Route::prefix('wp-admin')->group(function (){
     Route::match(['GET', 'POST'],'categories/add', [CategoriesController::class, 'add'])->name('cate.add');
     Route::match(['GET', 'POST'],'categories/edit/{id}', [CategoriesController::class, 'edit'])->name('cate.edit');
     Route::get('categories/delete/{id}', [CategoriesController::class, 'delete'])->name('cate.delete');
+
+    Route::get('brands', [BrandsController::class, 'list'])->name('brand.list');
+    Route::match(['GET', 'POST'],'brands/add', [BrandsController::class, 'add'])->name('brand.add');
+    Route::match(['GET', 'POST'],'brands/edit/{id}', [BrandsController::class, 'edit'])->name('brand.edit');
+    Route::get('brands/delete/{id}', [BrandsController::class, 'delete'])->name('brand.delete');
 });
 
 

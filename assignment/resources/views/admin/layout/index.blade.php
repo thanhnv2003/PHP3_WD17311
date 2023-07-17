@@ -24,6 +24,7 @@
 @include('admin.layout.header')
 <main class="main-content">
     @include('admin.layout.aside')
+
     @yield('content')
     @include('admin.layout.footer')
 </main>

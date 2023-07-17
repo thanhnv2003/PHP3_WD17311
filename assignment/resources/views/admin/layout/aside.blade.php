@@ -25,6 +25,12 @@
                         <span class="menu-text">Danh mục</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('brand.list')}}" class="">
+                        <span class="nav-icon uil uil-calendar-alt"></span>
+                        <span class="menu-text">Nhãn hàng</span>
+                    </a>
+                </li>
                 <li class="has-child">
                     <a href="#" class="">
                         <span class="nav-icon uil uil-users-alt"></span>

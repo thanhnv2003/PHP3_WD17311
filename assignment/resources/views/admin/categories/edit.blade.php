@@ -1,6 +1,7 @@
 @extends('admin.layout.index')
 @section('content')
     <div class="contents">
+        @include('admin.layout.errors')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">

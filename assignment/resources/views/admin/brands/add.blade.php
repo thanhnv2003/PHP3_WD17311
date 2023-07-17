@@ -30,7 +30,7 @@
                         class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
-                                <form action="{{route('cate.add')}}" method="post">
+                                <form action="{{route('brand.add')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mx-sm-30 mx-20 ">
 
@@ -42,11 +42,27 @@
 
                                                 <div class="add-product__body px-sm-40 px-20">
 
-                                                        <div class="form-group">
-                                                            <label for="name1">category name</label>
-                                                            <input type="text" class="form-control" name="catename"
-                                                                   placeholder="Nhập dữ liệu">
+                                                    <div class="form-group">
+                                                        <label for="name1">brands name</label>
+                                                        <input type="text" class="form-control" name="name"
+                                                               placeholder="Nhập dữ liệu">
+                                                    </div>
+                                                    <div class="dm-tag-wrap">
+                                                        <label for="name2">Brands Image</label>
+                                                        <div class="dm-upload">
+                                                            <div class="dm-upload__button">
+                                                                <a href="javascript:void(0)"
+                                                                   class="btn btn-lg btn-outline-lighten btn-upload"
+                                                                   onclick="$('#upload-1').click()"> <img class="svg"
+                                                                                                          src="{{url('admin/img/svg/upload.svg')}}" alt="upload"> Click to Upload</a>
+                                                                <input type="file" name="upload" class="upload-one" id="upload-1">
+                                                            </div>
+                                                            <div class="dm-upload__file">
+                                                                <ul>
+                                                                </ul>
+                                                            </div>
                                                         </div>
+                                                    </div>
 
                                                 </div>
 
@@ -58,9 +74,9 @@
                                         <div
                                             class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                             <button type="reset"
-                                                class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                                    class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
                                             </button>
-                                            <input type="submit" class="btn btn-primary btn-default btn-squared text-capitalize" value="save category">
+                                            <input type="submit" class="btn btn-primary btn-default btn-squared text-capitalize" value="save">
                                         </div>
 
                                     </div>
@@ -77,3 +93,4 @@
         </div>
     </div>
 @endsection
+
