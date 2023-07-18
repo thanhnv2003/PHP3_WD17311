@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="action-btn">
-                                <a href="{{route('brand.add')}}" class="btn btn-primary">
+                                <a href="{{route('cate.add')}}" class="btn btn-primary">
                                     Thêm mới
                                 </a>
                             </div>
@@ -222,24 +222,6 @@
                 'Thông báo!',
                 '{{Session::get('success')}}',
                 'success'
-            )
-        </script>
-    @endif
-    @if(Session::has('error'))
-        <script>
-            Swal.fire(
-                'Thông báo!',
-                '{{Session::get('error')}}',
-                'error'
-            )
-        </script>
-    @endif
-    @if ($errors->any())
-        <script>
-            Swal.fire(
-                'Thông báo!',
-                '{{Session::get('error')}}',
-                'error'
             )
         </script>
     @endif

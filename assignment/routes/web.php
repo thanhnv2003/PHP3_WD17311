@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\BrandsController;
+use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\EditorController;
+use App\Http\Controllers\Admin\ImageProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +33,15 @@ Route::prefix('wp-admin')->group(function (){
     Route::match(['GET', 'POST'],'brands/add', [BrandsController::class, 'add'])->name('brand.add');
     Route::match(['GET', 'POST'],'brands/edit/{id}', [BrandsController::class, 'edit'])->name('brand.edit');
     Route::get('brands/delete/{id}', [BrandsController::class, 'delete'])->name('brand.delete');
+
+    Route::get('products', [ProductsController::class, 'list'])->name('pro.list');
+    Route::match(['GET', 'POST'],'products/add', [ProductsController::class, 'add'])->name('pro.add');
+    Route::match(['GET', 'POST'],'products/edit/{id}', [ProductsController::class, 'edit'])->name('pro.edit');
+    Route::get('products/delete/{id}', [ProductsController::class, 'delete'])->name('pro.delete');
+    Route::post('ckeditor/image_upload', [EditorController::class, 'upload'])->name('upload');
+
+    Route::get('image-product/{id}', [ImageProductController::class, 'list'])->name('image.list');
+    Route::match(['GET', 'POST'],'image-product/edit/{id}', [ImageProductController::class, 'edit'])->name('image.edit');
 });
 
 
