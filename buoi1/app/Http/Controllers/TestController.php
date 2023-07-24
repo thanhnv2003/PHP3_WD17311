@@ -23,6 +23,7 @@ class TestController extends Controller
             ->where('id', '>=',1)
             ->where('id', '<=', 5)
 //            ->orWhere('email', '=', 'lauriane53@example.com')
+            ->whereNull('deleted_at')
             ->get();
 //        dd(DB::table('tests')->get()->sum);
 //        $perPage = 10; // Số lượng mục trên mỗi trang

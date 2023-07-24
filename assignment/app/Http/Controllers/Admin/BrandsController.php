@@ -8,6 +8,7 @@ use App\Models\brands;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class BrandsController extends Controller
 {
@@ -47,7 +48,14 @@ class BrandsController extends Controller
         if ($request->post()){
             $data = brands::find($id);
             $data->name = $request->name;
-            if ($request->hasFile('upload')){
+            if ($request->hasFile('upload') && $request->file('upload')->isValid()){
+                //xóa ảnh cũ
+//                $resultDL = Storage::delete('/public/'.$value->image);
+//                if ($resultDL){
+//                    $params['image'] = ...upload;
+//                }else{
+//                    $params['image'] = $value->image;
+//                }
                 $imageOld = url('storage/',$value[0]->image);
                 if (File::exists($imageOld)) {
                     File::delete($imageOld);
