@@ -31,6 +31,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Liên hệ</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('logout')}}">Đăng xuất</a>
+                </li>
+
             </ul>
         </div>
     </nav>

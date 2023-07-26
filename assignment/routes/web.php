@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\BrandsController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\EditorController;
 use App\Http\Controllers\Admin\ImageProductController;
+use App\Http\Controllers\Admin\PromotionsController;
+use App\Http\Controllers\Admin\BannersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +44,16 @@ Route::prefix('wp-admin')->group(function (){
 
     Route::get('image-product/{id}', [ImageProductController::class, 'list'])->name('image.list');
     Route::match(['GET', 'POST'],'image-product/edit/{id}', [ImageProductController::class, 'edit'])->name('image.edit');
+
+    Route::get('promotions', [PromotionsController::class, 'list'])->name('promo.list');
+    Route::match(['GET', 'POST'],'promotions/add', [PromotionsController::class, 'add'])->name('promo.add');
+    Route::match(['GET', 'POST'],'promotions/edit/{id}', [PromotionsController::class, 'edit'])->name('promo.edit');
+    Route::get('promotions/delete/{id}', [PromotionsController::class, 'delete'])->name('promo.delete');
+
+    Route::get('banners', [BannersController::class, 'list'])->name('banner.list');
+//    Route::match(['GET', 'POST'],'banners/add', [BannersController::class, 'add'])->name('banner.add');
+    Route::match(['GET', 'POST'],'banners/edit/{id}', [BannersController::class, 'edit'])->name('banner.edit');
+    Route::get('banners/delete/{id}', [BannersController::class, 'delete'])->name('banner.delete');
 });
 
 

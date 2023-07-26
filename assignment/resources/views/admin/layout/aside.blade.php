@@ -37,6 +37,18 @@
                         <span class="menu-text">Sản phẩm</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('promo.list')}}" class="">
+                        <span class="nav-icon uil uil-calendar-alt"></span>
+                        <span class="menu-text">Ưu đãi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('banner.list')}}" class="">
+                        <span class="nav-icon uil uil-calendar-alt"></span>
+                        <span class="menu-text">Banner</span>
+                    </a>
+                </li>
                 <li class="has-child">
                     <a href="#" class="">
                         <span class="nav-icon uil uil-users-alt"></span>
