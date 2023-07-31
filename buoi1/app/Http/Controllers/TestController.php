@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TestRequest;
+use App\Models\products;
 use App\Models\tests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,16 @@ class TestController extends Controller
         return view('test.index',compact( 'title','data'));
     }
     public function add(TestRequest $request){
+
+//        for ($i = 0;$i < 20; $i++){
+//            $data = new products;
+//            $data->name = 'Nguyen Van Thanh';
+//            $data->price = 57575;
+//            $data->color = 'Green';
+//            $data->save();
+//        }
+//        die();
+
         // nếu như tồn tại repuest post
         if ($request->post()){
 //            $value = [
@@ -64,6 +75,7 @@ class TestController extends Controller
                 return redirect()->route('add');
             }
         }
+
         return view('test.add');
     }
 

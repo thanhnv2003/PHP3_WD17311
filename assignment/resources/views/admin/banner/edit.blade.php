@@ -11,7 +11,7 @@
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
                                 {{--                                {{dd($image)}}--}}
-                                <form action="{{route('image.edit', [$image->id])}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('banner.edit', [$image->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="card card-default card-md mb-4">

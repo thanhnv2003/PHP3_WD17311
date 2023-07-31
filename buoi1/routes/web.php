@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\Auth\LoginController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +42,4 @@ Route::get('delete/{id}', [TestController::class, 'delete'])->name('delete');
 Route::match(['GET','POST'],'login',[LoginController::class, 'login'])->name('login');
 //logout
 Route::get('logout',[LoginController::class, 'logout'])->name('logout');
+

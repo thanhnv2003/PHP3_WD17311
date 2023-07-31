@@ -16,7 +16,7 @@
 
                         <!-- Hero Slider Background Image Start-->
                         <div class="hero-slide-bg">
-                            <img src="assets/images/slider/slide-2.jpg" alt="" />
+                            <img src="{{asset('client/assets/images/slider/slide-2.jpg')}}" alt="" />
                         </div>
                         <!-- Hero Slider Background Image End-->
 
@@ -45,7 +45,7 @@
 
                         <!-- Hero Slider Background Image Start -->
                         <div class="hero-slide-bg">
-                            <img src="assets/images/slider/slide-2-2.jpg" alt="" />
+                            <img src="{{asset('client/assets/images/slider/slide-2-2.jpg')}}" alt="" />
                         </div>
                         <!-- Hero Slider Background Image End -->
 
@@ -93,7 +93,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-2.png" alt="Feature Icon">
+                                <img src="{{asset('client/assets/images/icons/feature-icon-2.png')}}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Free Shipping</h5>
@@ -107,7 +107,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="500">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-3.png" alt="Feature Icon">
+                                <img src="{{asset('client/assets/images/icons/feature-icon-3.png')}}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Support 24/7</h5>
@@ -120,7 +120,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="700">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-4.png" alt="Feature Icon">
+                                <img src="{{asset('client/assets/images/icons/feature-icon-4.png')}}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Money Return</h5>
@@ -134,7 +134,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="900">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-1.png" alt="Feature Icon">
+                                <img src="{{asset('client/assets/images/icons/feature-icon-1.png')}}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Order Discount</h5>

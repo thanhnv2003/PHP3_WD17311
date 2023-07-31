@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\StundentController;
 
+use App\Http\Controllers\ApiRest\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/student', [StundentController::class, 'student']);
+//Route::get('/student', [StundentController::class, 'student']);
+Route::resource('student', StudentController::class);

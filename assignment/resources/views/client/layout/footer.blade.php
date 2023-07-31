@@ -9,9 +9,9 @@
                         <p class="desc-content">Lorem ipsum dolor sit amet, consectetur adipisicing sed do eiusmod tempor incididun</p>
                         <!-- Contact Address Start -->
                         <ul class="widget-address">
-                            <li><span>Address: </span> 123 Main Street, Anytown, CA 12345 - USA.</li>
-                            <li><span>Call to: </span> <a href="#"> (012) 800 456 789-987</a></li>
-                            <li><span>Mail to: </span> <a href="#"> yourmail@example.com</a></li>
+                            <li><span>Address: </span> To Hieu, Nghia Tan, Cau Giay - Ha Noi.</li>
+                            <li><span>Call to: </span> <a href="#"> (+084) 387 509 923</a></li>
+                            <li><span>Mail to: </span> <a href="#"> thanhnvph22301@fpt.edu.vn</a></li>
                         </ul>
                         <!-- Contact Address End -->
 

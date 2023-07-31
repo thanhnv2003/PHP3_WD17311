@@ -25,7 +25,7 @@
                             </ul>
                         </div>
                         <div class="header-top-links">
-                            <span>Call Us</span><a href="#"> 01234567</a>
+                            <span>Call Us</span><a href="#"> 0387509923</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-xl-2 col-6">
                         <div class="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="{{url('/')}}"><img src="{{url('client/assets/images/logo/logo.png')}}" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -61,60 +61,60 @@
                         <div class="main-menu position-relative">
                             <ul>
                                 <li class="has-children">
-                                    <a href="#"><span>Home</span> <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                    </ul>
+                                    <a href="{{url('/')}}"><span>Home</span></a>
+{{--                                    <ul class="sub-menu">--}}
+{{--                                        <li><a href="index.html">Home 1</a></li>--}}
+{{--                                        <li><a href="index-2.html">Home 2</a></li>--}}
+{{--                                    </ul>--}}
                                 </li>
                                 <li class="has-children position-static">
-                                    <a href="#"><span>Shop</span> <i class="fa fa-angle-down"></i></a>
-                                    <ul class="mega-menu row-cols-4">
-                                        <li class="col">
-                                            <h4 class="mega-menu-title">Shop Layout</h4>
-                                            <ul class="mb-n2">
-                                                <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                <li><a href="shop-list-fullwidth.html">List Fullwidth</a></li>
-                                                <li><a href="shop-list-left-sidebar.html">List Left Sidebar</a></li>
-                                                <li><a href="shop-list-right-sidebar.html">List Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col">
-                                            <h4 class="mega-menu-title">Product Layout</h4>
-                                            <ul class="mb-n2">
-                                                <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                <li><a href="single-product-group.html">Single Product Group</a></li>
-                                                <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                                <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                                <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col">
-                                            <h4 class="mega-menu-title">Product Layout</h4>
-                                            <ul class="mb-n2">
-                                                <li><a href="single-product-gallery-left.html">Gallery Left</a></li>
-                                                <li><a href="single-product-gallery-right.html">Gallery Right</a></li>
-                                                <li><a href="single-product-tab-style-left.html">Tab Style Left</a></li>
-                                                <li><a href="single-product-tab-style-right.html">Tab Style Right</a></li>
-                                                <li><a href="single-product-sticky-left.html">Sticky Left</a></li>
-                                                <li><a href="single-product-sticky-right.html">Sticky Right</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col">
-                                            <h4 class="mega-menu-title">Other Pages</h4>
-                                            <ul class="mb-n2">
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="login-register.html">Loging | Register</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="compare.html">Compare</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="#"><span>Shop</span></a>
+{{--                                    <ul class="mega-menu row-cols-4">--}}
+{{--                                        <li class="col">--}}
+{{--                                            <h4 class="mega-menu-title">Shop Layout</h4>--}}
+{{--                                            <ul class="mb-n2">--}}
+{{--                                                <li><a href="shop-grid.html">Shop Grid</a></li>--}}
+{{--                                                <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>--}}
+{{--                                                <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>--}}
+{{--                                                <li><a href="shop-list-fullwidth.html">List Fullwidth</a></li>--}}
+{{--                                                <li><a href="shop-list-left-sidebar.html">List Left Sidebar</a></li>--}}
+{{--                                                <li><a href="shop-list-right-sidebar.html">List Right Sidebar</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                        <li class="col">--}}
+{{--                                            <h4 class="mega-menu-title">Product Layout</h4>--}}
+{{--                                            <ul class="mb-n2">--}}
+{{--                                                <li><a href="single-product.html">Single Product</a></li>--}}
+{{--                                                <li><a href="single-product-sale.html">Single Product Sale</a></li>--}}
+{{--                                                <li><a href="single-product-group.html">Single Product Group</a></li>--}}
+{{--                                                <li><a href="single-product-normal.html">Single Product Normal</a></li>--}}
+{{--                                                <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>--}}
+{{--                                                <li><a href="single-product-slider.html">Single Product Slider</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                        <li class="col">--}}
+{{--                                            <h4 class="mega-menu-title">Product Layout</h4>--}}
+{{--                                            <ul class="mb-n2">--}}
+{{--                                                <li><a href="single-product-gallery-left.html">Gallery Left</a></li>--}}
+{{--                                                <li><a href="single-product-gallery-right.html">Gallery Right</a></li>--}}
+{{--                                                <li><a href="single-product-tab-style-left.html">Tab Style Left</a></li>--}}
+{{--                                                <li><a href="single-product-tab-style-right.html">Tab Style Right</a></li>--}}
+{{--                                                <li><a href="single-product-sticky-left.html">Sticky Left</a></li>--}}
+{{--                                                <li><a href="single-product-sticky-right.html">Sticky Right</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                        <li class="col">--}}
+{{--                                            <h4 class="mega-menu-title">Other Pages</h4>--}}
+{{--                                            <ul class="mb-n2">--}}
+{{--                                                <li><a href="my-account.html">My Account</a></li>--}}
+{{--                                                <li><a href="login-register.html">Loging | Register</a></li>--}}
+{{--                                                <li><a href="wishlist.html">Wishlist</a></li>--}}
+{{--                                                <li><a href="cart.html">Cart</a></li>--}}
+{{--                                                <li><a href="checkout.html">Checkout</a></li>--}}
+{{--                                                <li><a href="compare.html">Compare</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
                                 </li>
                                 <li class="has-children">
                                     <a href="#"><span>Pages</span> <i class="fa fa-angle-down"></i></a>

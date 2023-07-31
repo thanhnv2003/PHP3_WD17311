@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EditorController;
 use App\Http\Controllers\Admin\ImageProductController;
 use App\Http\Controllers\Admin\PromotionsController;
 use App\Http\Controllers\Admin\BannersController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,7 @@ use App\Http\Controllers\Admin\BannersController;
 Route::get('/', function () {
     return view('client.home');
 });
+Route::get('login', [LoginController::class, 'login']);
 Route::prefix('wp-admin')->group(function (){
     Route::get('/', [HomeController::class,'index'])->name('admin');
 
@@ -51,7 +53,6 @@ Route::prefix('wp-admin')->group(function (){
     Route::get('promotions/delete/{id}', [PromotionsController::class, 'delete'])->name('promo.delete');
 
     Route::get('banners', [BannersController::class, 'list'])->name('banner.list');
-//    Route::match(['GET', 'POST'],'banners/add', [BannersController::class, 'add'])->name('banner.add');
     Route::match(['GET', 'POST'],'banners/edit/{id}', [BannersController::class, 'edit'])->name('banner.edit');
     Route::get('banners/delete/{id}', [BannersController::class, 'delete'])->name('banner.delete');
 });
