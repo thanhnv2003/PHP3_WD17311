@@ -6,8 +6,10 @@
     <script src="{{url('client/assets/js/main.js')}}"></script>
 @endpush
 @section('content')
+
     <!-- Breadcrumb Section Start -->
     <div class="section">
+
 
         <!-- Breadcrumb Area Start -->
         <div class="breadcrumb-area bg-light">
@@ -16,7 +18,7 @@
                     <h1 class="title">Login | Register</h1>
                     <ul>
                         <li>
-                            <a href="index.html">Home </a>
+                            <a href="{{url('/')}}">Home </a>
                         </li>
                         <li class="active"> Login | Register</li>
                     </ul>
@@ -30,8 +32,9 @@
 
     <!-- Login | Register Section Start -->
     <div class="section section-margin">
-        <div class="container">
 
+        <div class="container">
+            @include('client.layout.errors')
             <div class="row mb-n10">
                 <div class="col-lg-6 col-md-8 m-auto m-lg-0 pb-10">
                     <!-- Login Wrapper Start -->
@@ -45,17 +48,17 @@
                         <!-- Login Title & Content End -->
 
                         <!-- Form Action Start -->
-                        <form action="#" method="post">
-
+                        <form action="{{route('login')}}" method="post">
+                            @csrf
                             <!-- Input Email Start -->
                             <div class="single-input-item mb-3">
-                                <input type="email" placeholder="Email or Username">
+                                <input name="email" type="email" placeholder="Enter your Email">
                             </div>
                             <!-- Input Email End -->
 
                             <!-- Input Password Start -->
                             <div class="single-input-item mb-3">
-                                <input type="password" placeholder="Enter your Password">
+                                <input name="password" type="password" placeholder="Enter your Password">
                             </div>
                             <!-- Input Password End -->
 
@@ -75,13 +78,13 @@
 
                             <!-- Login Button Start -->
                             <div class="single-input-item mb-3">
-                                <button class="btn btn btn-dark btn-hover-primary rounded-0">Login</button>
+                                <input name="btnLogin" type="submit" class="btn btn btn-dark btn-hover-primary rounded-0" value="Login">
                             </div>
                             <!-- Login Button End -->
 
                             <!-- Lost Password & Creat New Account Start -->
                             <div class="lost-password">
-                                <a href="login-register.html">Create Account</a>
+                                <a href="{{route('login')}}">Create Account</a>
                             </div>
                             <!-- Lost Password & Creat New Account End -->
 
@@ -103,29 +106,29 @@
                         <!-- Login Title & Content End -->
 
                         <!-- Form Action Start -->
-                        <form action="#" method="post">
-
+                        <form action="{{route('register')}}" method="post">
+                            @csrf
                             <!-- Input First Name Start -->
-                            <div class="single-input-item mb-3">
-                                <input type="text" placeholder="First Name">
-                            </div>
+{{--                            <div class="single-input-item mb-3">--}}
+{{--                                <input type="text" placeholder="First Name">--}}
+{{--                            </div>--}}
                             <!-- Input First Name End -->
 
                             <!-- Input Last Name Start -->
                             <div class="single-input-item mb-3">
-                                <input type="text" placeholder="Last Name">
+                                <input name="name" type="text" placeholder="Enter your Full Name">
                             </div>
                             <!-- Input Last Name End -->
 
                             <!-- Input Email Or Username Start -->
                             <div class="single-input-item mb-3">
-                                <input type="email" placeholder="Email or Username">
+                                <input name="email" type="email" placeholder="Enter your Email">
                             </div>
                             <!-- Input Email Or Username End -->
 
                             <!-- Input Password Start -->
                             <div class="single-input-item mb-3">
-                                <input type="password" placeholder="Enter your Password">
+                                <input name="password" type="password" placeholder="Enter your Password">
                             </div>
                             <!-- Input Password End -->
 
@@ -145,7 +148,7 @@
 
                             <!-- Register Button Start -->
                             <div class="single-input-item mb-3">
-                                <button class="btn btn btn-dark btn-hover-primary rounded-0">Register</button>
+                                <input type="submit" name="btnRes" class="btn btn btn-dark btn-hover-primary rounded-0" value="Register">
                             </div>
                             <!-- Register Button End -->
 

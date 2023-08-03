@@ -9,7 +9,10 @@ use App\Http\Controllers\Admin\EditorController;
 use App\Http\Controllers\Admin\ImageProductController;
 use App\Http\Controllers\Admin\PromotionsController;
 use App\Http\Controllers\Admin\BannersController;
+
 use App\Http\Controllers\Auth\LoginController;
+
+use App\Http\Controllers\Client\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +24,12 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('client.home');
-});
-Route::get('login', [LoginController::class, 'login']);
-Route::prefix('wp-admin')->group(function (){
+Route::get('/', [ClientController::class, 'index'])->name('index');
+Route::match(['GET', 'POST'],'login', [LoginController::class, 'login'])->name('login');
+Route::post('register', [LoginController::class,'register'])->name('register');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::prefix('wp-admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/', [HomeController::class,'index'])->name('admin');
 
     Route::get('categories', [CategoriesController::class, 'list'])->name('cate.list');

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->string('role')->default('User');
             $table->integer('status')->default('0');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

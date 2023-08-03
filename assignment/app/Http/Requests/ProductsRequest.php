@@ -35,7 +35,7 @@ class ProductsRequest extends FormRequest
                             'amount' => 'required|numeric',
                             'old_price' => 'required|numeric',
                             'sale_price' => 'required|numeric',
-                            'description' => 'required'
+
                         ];
                         break;
                     case 'edit':
@@ -44,7 +44,7 @@ class ProductsRequest extends FormRequest
                             'amount' => 'required|numeric',
                             'old_price' => 'required|numeric',
                             'sale_price' => 'required|numeric',
-                            'description' => 'required'
+
                         ];
                         break;
                     default:

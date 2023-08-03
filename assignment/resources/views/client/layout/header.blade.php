@@ -150,7 +150,7 @@
                             <!-- Search Header Action Button End -->
 
                             <!-- User Account Header Action Button Start -->
-                            <a href="login-register.html" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
+                            <a href="{{route('login')}}" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
                             <!-- User Account Header Action Button End -->
 
                             <!-- Wishlist Header Action Button Start -->
