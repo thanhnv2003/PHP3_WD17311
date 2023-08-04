@@ -32,14 +32,14 @@ class ProductsController extends Controller
             $data->old_price = $request->old_price != '' ? $request->old_price : 0;
             $data->sale_price = $request->sale_price;
             $data->description = $request->editor1;
-            $data->save();
-            $new_id = $data->id;
+            $image = [];
             for ($i = 0; $i < 5; $i++){
-                $image = new image_product;
-                $image->id_product = $new_id;
-                $image->image = 'null';
-                $image->save();
+                $name = 'No image';
+                array_push($image, $name);
             }
+//            dd($image);
+            $data->image = json_encode($image);
+            $data->save();
             return redirect()->route('pro.list')->with('success','Thêm mới thành công');
         }
         return view('admin.product.add', compact('title', 'brand', 'category'));

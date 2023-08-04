@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('id_brands');
             $table->string('name');
             $table->integer('amount');
+            $table->json('image')->nullable();
             $table->float('old_price');
             $table->float('sale_price')->nullable();
             $table->text('description')->nullable();

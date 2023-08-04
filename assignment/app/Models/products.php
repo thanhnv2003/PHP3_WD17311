@@ -14,8 +14,5 @@ class products extends Model
     protected $fillable = [
       'id_cate', 'name', 'amount', 'old_price', 'sale_price', 'description', 'status'
     ];
-    public function imageProduct():BelongsTo
-    {
-        return $this->belongsTo(image_product::class);
-    }
+
 }

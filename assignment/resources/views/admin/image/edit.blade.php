@@ -11,7 +11,7 @@
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
 {{--                                {{dd($image)}}--}}
-                                <form action="{{route('image.edit', [$image->id])}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('image.edit', ['id' => $id, 'product' => $product])}}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="card card-default card-md mb-4">
@@ -21,7 +21,7 @@
                                         <div class="card-body">
                                             <div class="dm-tag-wrap">
                                                 <div class="dm-upload">
-                                                    <img src="{{$image->image == 'null' ? '' : $image->image}}" alt="Lỗi tải ảnh">
+                                                    <img src="{{$image[$id] == 'No image' ? '' : asset('storage/'.$image[$id])}}" alt="Lỗi tải ảnh" style="width: 300px">
                                                 </div>
                                             </div>
                                         </div>

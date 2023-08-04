@@ -214,7 +214,7 @@
                                             <td>
                                                 <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
                                                                                                     <li>
-                                                                                                        <a href="{{route('image.list', [$value->id])}}" class="view">
+                                                                                                        <a href="{{route('image.list', ['id' => $value->id])}}" class="view">
                                                                                                             Ảnh
                                                                                                         </a>
                                                                                                     </li>

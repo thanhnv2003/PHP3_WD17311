@@ -42,18 +42,14 @@
 {{--                                            <th>--}}
 {{--                                                <span class="userDatatable-title">name</span>--}}
 {{--                                            </th>--}}
-                                            <th>
-                                                <span class="userDatatable-title">created_at</span>
-                                            </th>
-                                            <th>
-                                                <span class="userDatatable-title">updated_at</span>
-                                            </th>
+
                                             <th>
                                                 <span class="userDatatable-title float-end">action</span>
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
+
                                         @foreach($data as $key => $value)
                                             <tr>
                                                 <td>
@@ -70,9 +66,9 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <a href="{{route('image.edit', [$value->id])}}"
+                                                            <a href="{{route('image.edit', ['id' => $key, 'product' => $id])}}"
                                                                class="profile-image rounded-circle d-block m-0 wh-38"
-                                                               style="background-image:url({{url('storage',$value->image)}}); background-size: cover;"></a>
+                                                               style="background-image:url({{url('storage',$value)}}); background-size: cover;"></a>
                                                         </div>
 
                                                     </div>
@@ -82,29 +78,11 @@
 {{--                                                        {{$value->image}}--}}
 {{--                                                    </div>--}}
 {{--                                                </td>--}}
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="userDatatable-inline-title">
-                                                            <a href="#" class="text-dark fw-500">
-                                                                <h6>{{date('d-m-Y H:i:s', strtotime($value->created_at))}}</h6>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class="userDatatable-inline-title">
-                                                            <a href="#" class="text-dark fw-500">
-                                                                <h6>{{date('d-m-Y H:i:s', strtotime($value->updated_at))}}</h6>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
 
                                                 <td>
                                                     <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
                                                         <li>
-                                                            <a class="btn btn-secondary mx-1" href="{{route('image.edit', [$value->id])}}" >Sửa</a>
+                                                            <a class="btn btn-secondary mx-1" href="{{route('image.edit', ['id' => $key, 'product' => $id])}}" >Sửa</a>
                                                         </li>
 
                                                     </ul>

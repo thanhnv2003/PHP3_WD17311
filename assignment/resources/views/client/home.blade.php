@@ -235,14 +235,13 @@
                                                 <div class="thumb">
 
                                                     <a href="single-product.html" class="image">
-                                                        {{$dataimg = \App\Models\image_product::where('id_product',$value->id)->get()}}
-{{dd($dataimg[0])}}
+
                                                         <img class="first-image"
-                                                             src="{{asset('storage/'.$dataimg[1])}}"
+                                                             src="{{asset('storage/'.json_decode($value->image)[0])}}"
                                                              alt="Product" />
 
                                                         <img class="second-image"
-                                                             src="{{asset('storage/')}}"
+                                                             src="{{asset('storage/'.json_decode($value->image)[1])}}"
                                                              alt="Product" />
 
                                                     </a>

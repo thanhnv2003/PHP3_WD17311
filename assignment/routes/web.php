@@ -49,7 +49,7 @@ Route::prefix('wp-admin')->middleware(['auth','admin'])->group(function (){
     Route::post('ckeditor/image_upload', [EditorController::class, 'upload'])->name('upload');
 
     Route::get('image-product/{id}', [ImageProductController::class, 'list'])->name('image.list');
-    Route::match(['GET', 'POST'],'image-product/edit/{id}', [ImageProductController::class, 'edit'])->name('image.edit');
+    Route::match(['GET', 'POST'],'image-product/edit/{id}/{product}', [ImageProductController::class, 'edit'])->name('image.edit');
 
     Route::get('promotions', [PromotionsController::class, 'list'])->name('promo.list');
     Route::match(['GET', 'POST'],'promotions/add', [PromotionsController::class, 'add'])->name('promo.add');

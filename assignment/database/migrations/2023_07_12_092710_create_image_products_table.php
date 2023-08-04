@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('id_product');
             $table->string('image');
             $table->timestamps();
-            $table->foreign('id_product')->references('id')->on('products');
         });
     }
 
