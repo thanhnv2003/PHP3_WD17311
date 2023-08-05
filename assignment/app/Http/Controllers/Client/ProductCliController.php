@@ -17,4 +17,11 @@ class ProductCliController extends Controller
 //        dd(json_decode($data_like[0]->image));
         return view('client.product.detail', compact('data_product', 'data_like'));
     }
+    public function shop(){
+        $perPage = 12;
+        $data = products::paginate($perPage);
+
+//        dd($data);
+        return view('client.product.shop', $data);
+    }
 }

@@ -29,8 +29,8 @@
                                         Fashion New <br />
                                         Collection
                                     </h2>
-                                    <p>Up to 70% off selected Product</p>
-                                    <a href="shop-grid.html" class="btn btn-lg btn-primary btn-hover-dark">Shop Now</a>
+                                    <p>Giảm tới 70% cho sản phẩm đã chọn</p>
+                                    <a href="{{route('product_shop')}}" class="btn btn-lg btn-primary btn-hover-dark">Shop Now</a>
                                 </div>
                             </div>
 
@@ -57,8 +57,8 @@
                                         Trend Fashion <br />
                                         Collection
                                     </h2>
-                                    <p>Up to 30% off selected Product</p>
-                                    <a href="shop-grid.html" class="btn btn-lg btn-primary btn-hover-dark">Shop Now</a>
+                                    <p>Giảm tới 30% cho sản phẩm đã chọn</p>
+                                    <a href="{{route('product_shop')}}" class="btn btn-lg btn-primary btn-hover-dark">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -159,14 +159,14 @@
                 <div class="col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-right" data-aos-delay="300">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-4.jpg"
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/banner-4.jpg"
                                                           alt="Banner Image"></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
                                 <h4 class="sub-title">Up to <span>50%</span> Off</h4>
                                 <h3 class="title">Office Dress</h3>
-                                <a href="shop-grid.html" class="btn btn-primary btn-hover-dark btn-sm">Shop Now</a>
+                                <a href="{{route('product_shop')}}" class="btn btn-primary btn-hover-dark btn-sm">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -177,14 +177,14 @@
                 <div class="col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-left" data-aos-delay="500">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-5.jpg"
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/banner-5.jpg"
                                                           alt="Banner Image"></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
                                 <h4 class="sub-title">Up to <span>40%</span> Off</h4>
                                 <h3 class="title">All Products</h3>
-                                <a href="shop-grid.html" class="btn btn-primary btn-hover-dark btn-sm">Shop Now</a>
+                                <a href="{{route('product_shop')}}" class="btn btn-primary btn-hover-dark btn-sm">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -206,11 +206,11 @@
                 <div class="col-12">
                     <ul class="product-tab-nav nav justify-content-center mb-10 title-border-bottom mt-n3">
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="300"><a class="nav-link active mt-3"
-                                                                                        data-bs-toggle="tab" href="#tab-product-all">New Arrivals</a></li>
+                                                                                        data-bs-toggle="tab" href="#tab-product-all">Sản phẩm mới</a></li>
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="400"><a class="nav-link mt-3"
-                                                                                        data-bs-toggle="tab" href="#tab-product-clothings">Best Sellers</a></li>
+                                                                                        data-bs-toggle="tab" href="#tab-product-clothings">Bán chạy nhất</a></li>
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="500"><a class="nav-link mt-3"
-                                                                                        data-bs-toggle="tab" href="#tab-product-all">Sale Items</a></li>
+                                                                                        data-bs-toggle="tab" href="#tab-product-all">Giá tốt nhất</a></li>
                     </ul>
                 </div>
                 <!-- Tab End -->
@@ -271,8 +271,7 @@
                                                         <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
                                                         <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
+                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
                                                 </div>
                                             </div>
                                             <!-- Single Product End -->
@@ -348,8 +347,7 @@
                                                         <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
                                                         <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                            Cart</button>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
                                                     </div>
                                                 </div>
                                                 <!-- Single Product End -->
@@ -390,7 +388,7 @@
                 <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="banner">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/big-banner.jpg" alt="Banner"></a>
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/big-banner.jpg" alt="Banner"></a>
                         </div>
                     </div>
                 </div>
@@ -406,7 +404,7 @@
                 <div class="col-md-6 col-lg-4 col-12 mb-8" data-aos="fade-up" data-aos-delay="300">
                     <!-- Product List Title Start -->
                     <div class="product-list-title">
-                        <h2 class="title pb-3 mb-0">Best Offer</h2>
+                        <h2 class="title pb-3 mb-0">Giá tốt nhất</h2>
                         <span></span>
                     </div>
                     <!-- Product List Title End -->
@@ -419,24 +417,24 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    @foreach($data_random_3 as $key => $value)
+                                    @foreach($data_random_3_1 as $key => $value)
                                     <!-- Single Product List Start -->
                                     <div class="single-product-list product-hover mb-6">
 
                                         <div class="thumb">
                                             <a href="" class="image">
                                                 <img class="first-image"
-                                                     src="assets/images/products/small-product/1.jpg" alt="Product 1" />
+                                                     src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
                                                 <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product 2" />
+                                                     src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
                                             </a>
                                         </div>
                                         <div class="content">
                                             <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
                                             </h5>
                                             <span class="price">
-                                                <span class="new">$38.00</span>
-                                                <span class="old">$42.50</span>
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
                                             <span class="ratings">
                                                 <span class="rating-wrap">
@@ -455,86 +453,35 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/6.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Make Thing Happen
-                                                    T-Shirt</a></h5>
-                                            <span class="price">
-                                                <span class="new">$66.50</span>
-                                                <span class="old">$70.55</span>
+                                    @foreach($data_random_3_2 as $key => $value)
+                                        <!-- Single Product List Start -->
+                                        <div class="single-product-list product-hover mb-6">
+
+                                            <div class="thumb">
+                                                <a href="" class="image">
+                                                    <img class="first-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
+                                                    <img class="second-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
+                                                </h5>
+                                                <span class="price">
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
-                                            <span class="ratings">
+                                                <span class="ratings">
                                                 <span class="rating-wrap">
                                                     <span class="star" style="width: 100%"></span>
                                                 </span>
                                                 <span class="rating-num">(4)</span>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/4.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/10.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Simple Woven Fabrics</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$86.00</span>
-                                                <span class="old">$90.00</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">(1)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/1.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Brother Hoddies in Grey</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.00</span>
-                                                <span class="old">$42.50</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">(4)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
+                                        <!-- Single Product List End -->
+                                    @endforeach
 
                                 </div>
                                 <!-- Product List Wrapper End -->
@@ -560,7 +507,7 @@
                 <div class="col-md-6 col-lg-4 col-12 mb-8" data-aos="fade-up" data-aos-delay="500">
                     <!-- Product List Title Start -->
                     <div class="product-list-title">
-                        <h2 class="title pb-3 mb-0">New Products</h2>
+                        <h2 class="title pb-3 mb-0">Sản phẩm mới</h2>
                         <span></span>
                     </div>
                     <!-- Product List Title End -->
@@ -573,86 +520,35 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/6.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Make Thing Happen
-                                                    T-Shirt</a></h5>
-                                            <span class="price">
-                                                <span class="new">$66.50</span>
-                                                <span class="old">$70.55</span>
+                                    @foreach($data_random_3_2 as $key => $value)
+                                        <!-- Single Product List Start -->
+                                        <div class="single-product-list product-hover mb-6">
+
+                                            <div class="thumb">
+                                                <a href="" class="image">
+                                                    <img class="first-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
+                                                    <img class="second-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
+                                                </h5>
+                                                <span class="price">
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
-                                            <span class="ratings">
+                                                <span class="ratings">
                                                 <span class="rating-wrap">
                                                     <span class="star" style="width: 100%"></span>
                                                 </span>
                                                 <span class="rating-num">(4)</span>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/4.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/10.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Simple Woven Fabrics</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$86.00</span>
-                                                <span class="old">$90.00</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">(1)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/1.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Brother Hoddies in Grey</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.00</span>
-                                                <span class="old">$42.50</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">(4)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
+                                        <!-- Single Product List End -->
+                                    @endforeach
 
                                 </div>
                                 <!-- Product List Wrapper End -->
@@ -660,84 +556,35 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/7.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/9.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Lather Sneaker</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$65.00</span>
+                                    @foreach($data_random_3_1 as $key => $value)
+                                        <!-- Single Product List Start -->
+                                        <div class="single-product-list product-hover mb-6">
+
+                                            <div class="thumb">
+                                                <a href="" class="image">
+                                                    <img class="first-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
+                                                    <img class="second-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
+                                                </h5>
+                                                <span class="price">
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
-                                            <span class="ratings">
+                                                <span class="ratings">
                                                 <span class="rating-wrap">
                                                     <span class="star" style="width: 100%"></span>
                                                 </span>
                                                 <span class="rating-num">(4)</span>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/11.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/10.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Handmade Shoulder Bag</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$86.00</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">(1)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/3.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Enjoy The Rest T-Shirt</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$44.00</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">(4)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
+                                        <!-- Single Product List End -->
+                                    @endforeach
 
                                 </div>
                                 <!-- Product List Wrapper End -->
@@ -761,7 +608,7 @@
                 <div class="col-md-6 col-lg-4 col-12 mb-8" data-aos="fade-up" data-aos-delay="700">
                     <!-- Product List Title Start -->
                     <div class="product-list-title">
-                        <h2 class="title pb-3 mb-0">Best Sellers</h2>
+                        <h2 class="title pb-3 mb-0">Bán chạy nhất</h2>
                         <span></span>
                     </div>
                     <!-- Product List Title End -->
@@ -774,84 +621,35 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/7.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/9.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Lather Sneaker</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$65.00</span>
+                                    @foreach($data_random_3_1 as $key => $value)
+                                        <!-- Single Product List Start -->
+                                        <div class="single-product-list product-hover mb-6">
+
+                                            <div class="thumb">
+                                                <a href="" class="image">
+                                                    <img class="first-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
+                                                    <img class="second-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
+                                                </h5>
+                                                <span class="price">
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
-                                            <span class="ratings">
+                                                <span class="ratings">
                                                 <span class="rating-wrap">
                                                     <span class="star" style="width: 100%"></span>
                                                 </span>
                                                 <span class="rating-num">(4)</span>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/11.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/10.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Handmade Shoulder Bag</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$86.00</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">(1)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/3.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Enjoy The Rest T-Shirt</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$44.00</span>
-                                                <span class="old">$48.50</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 100%"></span>
-                                                </span>
-                                                <span class="rating-num">(4)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
+                                        <!-- Single Product List End -->
+                                    @endforeach
 
                                 </div>
                                 <!-- Product List Wrapper End -->
@@ -859,86 +657,35 @@
                                 <!-- Product List Wrapper Start -->
                                 <div class="swiper-slide product-list-wrapper mb-n6">
 
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/1.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/5.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Brother Hoddies in Grey</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$38.00</span>
-                                                <span class="old">$42.50</span>
+                                    @foreach($data_random_3_2 as $key => $value)
+                                        <!-- Single Product List Start -->
+                                        <div class="single-product-list product-hover mb-6">
+
+                                            <div class="thumb">
+                                                <a href="" class="image">
+                                                    <img class="first-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[0])}}" alt="Product 1" style="max-width: 130px" />
+                                                    <img class="second-image"
+                                                         src="{{asset('storage/'.json_decode($value->image)[1])}}" alt="Product 2" style="max-width: 130px" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}</a>
+                                                </h5>
+                                                <span class="price">
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
-                                            <span class="ratings">
+                                                <span class="ratings">
                                                 <span class="rating-wrap">
                                                     <span class="star" style="width: 100%"></span>
                                                 </span>
                                                 <span class="rating-num">(4)</span>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/2.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/3.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Jogging Shorts</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$21.00</span>
-                                                <span class="old">$22.50</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 60%"></span>
-                                                </span>
-                                                <span class="rating-num">(4)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
-
-                                    <!-- Single Product List Start -->
-                                    <div class="single-product-list product-hover mb-6">
-                                        <div class="thumb">
-                                            <a href="single-product.html" class="image">
-                                                <img class="first-image"
-                                                     src="assets/images/products/small-product/4.jpg" alt="Product" />
-                                                <img class="second-image"
-                                                     src="assets/images/products/small-product/10.jpg" alt="Product" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Simple Woven Fabrics</a>
-                                            </h5>
-                                            <span class="price">
-                                                <span class="new">$86.00</span>
-                                                <span class="old">$90.00</span>
-                                            </span>
-                                            <span class="ratings">
-                                                <span class="rating-wrap">
-                                                    <span class="star" style="width: 80%"></span>
-                                                </span>
-                                                <span class="rating-num">(1)</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- Single Product List End -->
+                                        <!-- Single Product List End -->
+                                    @endforeach
 
                                 </div>
                                 <!-- Product List Wrapper End -->
@@ -975,13 +722,13 @@
                 <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-up" data-aos-delay="300">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-1.jpg" alt=""></a>
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/banner-1.jpg" alt=""></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
                                 <h4 class="sub-title">Sun Hat</h4>
                                 <h3 class="title">Get Offer <br />For Summer</h3>
-                                <a href="shop-grid.html" class="btn btn-dark btn-sm">Shop Now</a>
+                                <a href="{{route('product_shop')}}" class="btn btn-dark btn-sm">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -992,13 +739,13 @@
                 <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-up" data-aos-delay="500">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-2.jpg" alt=""></a>
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/banner-2.jpg" alt=""></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
                                 <h4 class="sub-title">Ladies Bag</h4>
                                 <h3 class="title">Buy One <br />Get One Free</h3>
-                                <a href="shop-grid.html" class="btn btn-dark btn-sm">Shop Now</a>
+                                <a href="{{route('product_shop')}}" class="btn btn-dark btn-sm">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -1009,13 +756,13 @@
                 <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-up" data-aos-delay="700">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-3.jpg" alt=""></a>
+                            <a href="{{route('product_shop')}}"><img src="{{asset('client')}}/assets/images/banner/banner-3.jpg" alt=""></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
                                 <h4 class="sub-title">Smart Watch</h4>
                                 <h3 class="title">20% Off <br />Smart Watch</h3>
-                                <a href="shop-grid.html" class="btn btn-dark btn-sm">Shop Now</a>
+                                <a href="{{route('product_shop')}}" class="btn btn-dark btn-sm">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -1038,15 +785,15 @@
                 <div class="col-12">
                     <div class="section-title-produt-tab-wrapper">
                         <div class="section-title m-0" data-aos="fade-right" data-aos-delay="300">
-                            <h1 class="title">Daily Deals</h1>
+                            <h1 class="title">Ưu đãi hàng ngày</h1>
                         </div>
                         <ul class="product-tab-nav nav mt-n3" data-aos="fade-left" data-aos-delay="300">
                             <li class="nav-item"><a class="nav-link active mt-3" data-bs-toggle="tab"
-                                                    href="#product-deal-all">New Arrivals</a></li>
+                                                    href="#product-deal-all">Sản phẩm mới</a></li>
                             <li class="nav-item"><a class="nav-link mt-3" data-bs-toggle="tab"
-                                                    href="#product-deal-clothings">Best Sellers</a></li>
+                                                    href="#product-deal-clothings">Bán chạy nhất</a></li>
                             <li class="nav-item"><a class="nav-link mt-3" data-bs-toggle="tab"
-                                                    href="#product-deal-all">Sale Items</a></li>
+                                                    href="#product-deal-all">Giá tốt nhất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1062,6 +809,7 @@
                             <div class="product-deal-carousel">
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
+                                        @foreach($data_daily_deal as $key => $value)
                                         <!-- Product Start -->
                                         <div class="swiper-slide product-wrapper" data-aos="fade-right"
                                              data-aos-delay="600">
@@ -1069,8 +817,8 @@
                                             <!-- Single Product Deal Start -->
                                             <div class="product single-deal-product product-border-left">
                                                 <div class="thumb">
-                                                    <a href="single-product-sale.html" class="image">
-                                                        <img src="assets/images/products/medium-size/1.jpg"
+                                                    <a href="{{route('product_detail', [$value->id])}}" class="image">
+                                                        <img src="{{asset('storage/'.json_decode($value->image)[0])}}"
                                                              alt="Product" />
                                                     </a>
                                                     <span class="badges">
@@ -1078,15 +826,16 @@
                                                     </span>
                                                 </div>
                                                 <div class="content">
-                                                    <p class="inner-desc">Hurry Up! Offer Ends In:</p>
+                                                    <p class="inner-desc">Nhanh lên! Ưu đãi kết thúc sau:</p>
                                                     <div class="countdown-area">
                                                         <div class="countdown-wrapper d-flex"
-                                                             data-countdown="2023/12/24"></div>
+                                                             data-countdown="2023/08/20"></div>
                                                     </div>
-                                                    <h4 class="sub-title"><a href="single-product-sale.html">Studio
-                                                            Design</a></h4>
-                                                    <h5 class="title"><a href="single-product-sale.html">Enjoy The Rest
-                                                            T-Shirt</a></h5>
+                                                        <?php $brands = \App\Models\brands::find($value->id_brands)
+                                                        ?>
+                                                    <h4 class="sub-title"><a href="{{route('product_detail', [$value->id])}}"{{$brands->name}}</a></h4>
+                                                    <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}
+                                                            </a></h5>
                                                     <span class="ratings">
                                                         <span class="rating-wrap">
                                                             <span class="star" style="width: 100%"></span>
@@ -1094,98 +843,17 @@
                                                         <span class="rating-num">(4)</span>
                                                     </span>
                                                     <span class="price">
-                                                        <span class="new">$38.00</span>
-                                                        <span class="old">$42.05</span>
+                                                        <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                        <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
+                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
                                                 </div>
                                             </div>
                                             <!-- Single Product Deal End -->
 
                                         </div>
                                         <!-- Product End -->
-
-                                        <!-- Product Start -->
-                                        <div class="swiper-slide product-wrapper" data-aos="fade-left"
-                                             data-aos-delay="600">
-
-                                            <!-- Single Product Deal Start -->
-                                            <div class="product single-deal-product product-border-left">
-                                                <div class="thumb">
-                                                    <a href="single-product-sale.html" class="image">
-                                                        <img src="assets/images/products/medium-size/8.jpg"
-                                                             alt="Product" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="inner-desc">Hurry Up! Offer Ends In:</p>
-                                                    <div class="countdown-area">
-                                                        <div class="countdown-wrapper d-flex"
-                                                             data-countdown="2023/12/24"></div>
-                                                    </div>
-                                                    <h4 class="sub-title"><a href="single-product-sale.html">Studio
-                                                            Design</a></h4>
-                                                    <h5 class="title"><a href="single-product-sale.html">Classic Trucker
-                                                            Hat</a></h5>
-                                                    <span class="ratings">
-                                                        <span class="rating-wrap">
-                                                            <span class="star" style="width: 65%"></span>
-                                                        </span>
-                                                        <span class="rating-num">(3)</span>
-                                                    </span>
-                                                    <span class="price">
-                                                        <span class="new">$07.00</span>
-                                                        <span class="old">$08.40</span>
-                                                    </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
-                                                </div>
-                                            </div>
-                                            <!-- Single Product Deal End -->
-
-                                        </div>
-                                        <!-- Product End -->
-
-                                        <!-- Product Start -->
-                                        <div class="swiper-slide product-wrapper">
-
-                                            <!-- Single Product Deal Start -->
-                                            <div class="product single-deal-product product-border-left">
-                                                <div class="thumb">
-                                                    <a href="single-product-sale.html" class="image">
-                                                        <img src="assets/images/products/medium-size/9.jpg"
-                                                             alt="Product" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="inner-desc">Hurry Up! Offer Ends In:</p>
-                                                    <div class="countdown-area">
-                                                        <div class="countdown-wrapper d-flex"
-                                                             data-countdown="2023/12/24"></div>
-                                                    </div>
-                                                    <h4 class="sub-title"><a href="single-product-sale.html">Studio
-                                                            Design</a></h4>
-                                                    <h5 class="title"><a href="single-product-sale.html">Basic Lather
-                                                            Sneaker</a></h5>
-                                                    <span class="ratings">
-                                                        <span class="rating-wrap">
-                                                            <span class="star" style="width: 80%"></span>
-                                                        </span>
-                                                        <span class="rating-num">(2)</span>
-                                                    </span>
-                                                    <span class="price">
-                                                        <span class="new">$88.00</span>
-                                                        <span class="old">$92.50</span>
-                                                    </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
-                                                </div>
-                                            </div>
-                                            <!-- Single Product Deal End -->
-
-                                        </div>
-                                        <!-- Product End -->
+                                        @endforeach
 
                                     </div>
 
@@ -1208,89 +876,51 @@
                             <div class="product-deal-carousel">
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
+                                        @foreach($data_daily_deal as $key => $value)
+                                            <!-- Product Start -->
+                                            <div class="swiper-slide product-wrapper" data-aos="fade-right"
+                                                 data-aos-delay="600">
 
-                                        <!-- Product Start -->
-                                        <div class="swiper-slide product-wrapper mb-n10">
-
-                                            <!-- Single Product Deal Start -->
-                                            <div class="product single-deal-product product-border-left mb-10">
-                                                <div class="thumb">
-                                                    <a href="single-product-sale.html" class="image">
-                                                        <img src="assets/images/products/medium-size/9.jpg"
-                                                             alt="Product" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="inner-desc">Hurry Up! Offer Ends In:</p>
-                                                    <div class="countdown-area">
-                                                        <div class="countdown-wrapper d-flex"
-                                                             data-countdown="2023/12/24"></div>
-                                                    </div>
-                                                    <h4 class="sub-title"><a href="single-product-sale.html">Studio
-                                                            Design</a></h4>
-                                                    <h5 class="title"><a href="single-product-sale.html">Basic Lather
-                                                            Sneaker</a></h5>
-                                                    <span class="ratings">
-                                                        <span class="rating-wrap">
-                                                            <span class="star" style="width: 80%"></span>
-                                                        </span>
-                                                        <span class="rating-num">(2)</span>
-                                                    </span>
-                                                    <span class="price">
-                                                        <span class="new">$88.00</span>
-                                                        <span class="old">$92.50</span>
-                                                    </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
-                                                </div>
-                                            </div>
-                                            <!-- Single Product Deal End -->
-
-                                        </div>
-                                        <!-- Product End -->
-
-                                        <!-- Product Start -->
-                                        <div class="swiper-slide product-wrapper mb-n10">
-
-                                            <!-- Single Product Deal Start -->
-                                            <div class="product single-deal-product product-border-left mb-10">
-                                                <div class="thumb">
-                                                    <a href="single-product-sale.html" class="image">
-                                                        <img src="assets/images/products/medium-size/1.jpg"
-                                                             alt="Product" />
-                                                    </a>
-                                                    <span class="badges">
+                                                <!-- Single Product Deal Start -->
+                                                <div class="product single-deal-product product-border-left">
+                                                    <div class="thumb">
+                                                        <a href="{{route('product_detail', [$value->id])}}" class="image">
+                                                            <img src="{{asset('storage/'.json_decode($value->image)[0])}}"
+                                                                 alt="Product" />
+                                                        </a>
+                                                        <span class="badges">
                                                         <span class="sale">-30%</span>
                                                     </span>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="inner-desc">Hurry Up! Offer Ends In:</p>
-                                                    <div class="countdown-area">
-                                                        <div class="countdown-wrapper d-flex"
-                                                             data-countdown="2023/12/24"></div>
                                                     </div>
-                                                    <h4 class="sub-title"><a href="single-product-sale.html">Studio
-                                                            Design</a></h4>
-                                                    <h5 class="title"><a href="single-product-sale.html">Enjoy The Rest
-                                                            T-Shirt</a></h5>
-                                                    <span class="ratings">
+                                                    <div class="content">
+                                                        <p class="inner-desc">Nhanh lên! Ưu đãi kết thúc sau:</p>
+                                                        <div class="countdown-area">
+                                                            <div class="countdown-wrapper d-flex"
+                                                                 data-countdown="2023/08/20"></div>
+                                                        </div>
+                                                            <?php $brands = \App\Models\brands::find($value->id_brands)
+                                                            ?>
+                                                        <h4 class="sub-title"><a href="{{route('product_detail', [$value->id])}}"{{$brands->name}}</a></h4>
+                                                        <h5 class="title"><a href="{{route('product_detail', [$value->id])}}">{{$value->name}}
+                                                            </a></h5>
+                                                        <span class="ratings">
                                                         <span class="rating-wrap">
                                                             <span class="star" style="width: 100%"></span>
                                                         </span>
                                                         <span class="rating-num">(4)</span>
                                                     </span>
-                                                    <span class="price">
-                                                        <span class="new">$38.00</span>
-                                                        <span class="old">$42.05</span>
+                                                        <span class="price">
+                                                        <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                        <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To
-                                                        Cart</button>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!-- Single Product Deal End -->
+                                                <!-- Single Product Deal End -->
 
-                                        </div>
-                                        <!-- Product End -->
+                                            </div>
+                                            <!-- Product End -->
+                                        @endforeach
 
                                     </div>
 
@@ -1327,36 +957,14 @@
                     <div class="brand-logo-carousel p-0">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-
+                                @foreach($data_brand as $key => $value)
                                 <!-- Single Brand Logo Start -->
                                 <div class="swiper-slide single-brand-logo" data-aos="fade-up" data-aos-delay="300">
-                                    <a href="#"><img src="assets/images/brand-logo/1.png" alt="Brand Logo"></a>
+                                    <a href="#"><img src="{{asset('storage/'.$value->image)}}" alt="Brand Logo"></a>
                                 </div>
                                 <!-- Single Brand Logo End -->
+                                @endforeach
 
-                                <!-- Single Brand Logo Start -->
-                                <div class="swiper-slide single-brand-logo" data-aos="fade-up" data-aos-delay="400">
-                                    <a href="#"><img src="assets/images/brand-logo/2.png" alt="Brand Logo"></a>
-                                </div>
-                                <!-- Single Brand Logo End -->
-
-                                <!-- Single Brand Logo Start -->
-                                <div class="swiper-slide single-brand-logo" data-aos="fade-up" data-aos-delay="500">
-                                    <a href="#"><img src="assets/images/brand-logo/3.png" alt="Brand Logo"></a>
-                                </div>
-                                <!-- Single Brand Logo End -->
-
-                                <!-- Single Brand Logo Start -->
-                                <div class="swiper-slide single-brand-logo" data-aos="fade-up" data-aos-delay="600">
-                                    <a href="#"><img src="assets/images/brand-logo/4.png" alt="Brand Logo"></a>
-                                </div>
-                                <!-- Single Brand Logo End -->
-
-                                <!-- Single Brand Logo Start -->
-                                <div class="swiper-slide single-brand-logo" data-aos="fade-up" data-aos-delay="700">
-                                    <a href="#"><img src="assets/images/brand-logo/5.png" alt="Brand Logo"></a>
-                                </div>
-                                <!-- Single Brand Logo End -->
 
                             </div>
                         </div>
@@ -1384,8 +992,8 @@
                     <!-- Blog Single Post Start -->
                     <div class="blog-single-post-wrapper">
                         <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/1.jpg" alt="Blog Post">
+                            <a class="blog-overlay" href="#">
+                                <img class="fit-image" src="{{asset('client')}}/assets/images/blog/blog-post/1.jpg" alt="Blog Post">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -1393,10 +1001,9 @@
                                 <span>By : <a href="#">Admin</a></span>
                                 <span>14 Jul 2023</span>
                             </div>
-                            <h3 class="title"><a href="blog-details.html">Some Winter Collections</a></h3>
+                            <h3 class="title"><a href="#">Some Winter Collections</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read
-                                More</a>
+                            <a href="#" class="btn btn-dark btn-hover-primary text-uppercase">Đọc thêm</a>
                         </div>
                     </div>
                     <!-- Blog Single Post End -->
@@ -1408,8 +1015,8 @@
                     <!-- Blog Single Post Start -->
                     <div class="blog-single-post-wrapper">
                         <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/2.jpg" alt="Blog Post">
+                            <a class="blog-overlay" href="#">
+                                <img class="fit-image" src="{{asset('client')}}/assets/images/blog/blog-post/2.jpg" alt="Blog Post">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -1417,10 +1024,9 @@
                                 <span>By : <a href="#">Admin</a></span>
                                 <span>14 Jul 2023</span>
                             </div>
-                            <h3 class="title"><a href="blog-details.html">My Perty Fashion</a></h3>
+                            <h3 class="title"><a href="#">My Perty Fashion</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read
-                                More</a>
+                            <a href="#" class="btn btn-dark btn-hover-primary text-uppercase">Đọc thêm</a>
                         </div>
                     </div>
                     <!-- Blog Single Post End -->
@@ -1432,8 +1038,8 @@
                     <!-- Blog Single Post Start -->
                     <div class="blog-single-post-wrapper">
                         <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/3.jpg" alt="Blog Post">
+                            <a class="blog-overlay" href="#">
+                                <img class="fit-image" src="{{asset('client')}}/assets/images/blog/blog-post/3.jpg" alt="Blog Post">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -1441,10 +1047,9 @@
                                 <span>By : <a href="#">Admin</a></span>
                                 <span>14 Jul 2023</span>
                             </div>
-                            <h3 class="title"><a href="blog-details.html">Perfect Fashion House</a></h3>
+                            <h3 class="title"><a href="#">Perfect Fashion House</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read
-                                More</a>
+                            <a href="#" class="btn btn-dark btn-hover-primary text-uppercase">Đọc thêm</a>
                         </div>
                     </div>
                     <!-- Blog Single Post End -->

@@ -27,6 +27,7 @@ use App\Http\Controllers\Client\ProductCliController;
 
 Route::get('/', [ClientController::class, 'index'])->name('index');
 Route::get('product/{id}', [ProductCliController::class, 'detail'])->name('product_detail');
+Route::get('shop', [ProductCliController::class, 'shop'])->name('product_shop');
 
 
 Route::match(['GET', 'POST'],'login', [LoginController::class, 'login'])->name('login');

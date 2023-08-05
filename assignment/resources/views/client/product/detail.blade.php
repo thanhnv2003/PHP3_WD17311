@@ -444,8 +444,8 @@
                                                 <span class="rating-num">(4)</span>
                                             </span>
                                             <span class="price">
-                                                <span class="new">{{number_format($data_product->sale_price, 0, ',', '.')}} VNĐ</span>
-                                                <span class="old">{{number_format($data_product->old_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
+                                                <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                             </span>
                                             <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
                                         </div>
