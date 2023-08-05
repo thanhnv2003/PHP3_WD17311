@@ -5,7 +5,7 @@
             <div class="row mb-n10">
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-4 mb-10" data-aos="fade-up" data-aos-delay="200">
                     <div class="single-footer-widget">
-                        <h2 class="widget-title">Contact Us</h2>
+                        <h2 class="widget-title">Liên hệ chúng tôi</h2>
                         <p class="desc-content">Lorem ipsum dolor sit amet, consectetur adipisicing sed do eiusmod tempor incididun</p>
                         <!-- Contact Address Start -->
                         <ul class="widget-address">
@@ -28,41 +28,42 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-2 col-xl-2 mb-10" data-aos="fade-up" data-aos-delay="300">
                     <div class="single-footer-widget">
-                        <h2 class="widget-title">Information</h2>
+                        <h2 class="widget-title">Thông tin</h2>
                         <ul class="widget-list">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="about.html">Delivery Information</a></li>
-                            <li><a href="about.html">Privacy Policy</a></li>
-                            <li><a href="about.html">Terms & Conditions</a></li>
-                            <li><a href="about.html">Customer Service</a></li>
-                            <li><a href="about.html">Return Policy</a></li>
+                            <li><a href="{{route('page_404')}}">Về chúng tôi</a></li>
+                            <li><a href="{{route('page_404')}}">Thông tin giao hàng</a></li>
+                            <li><a href="{{route('page_404')}}">Chính sách bảo mật</a></li>
+                            <li><a href="{{route('page_404')}}">Điều khoản</a></li>
+                            <li><a href="{{route('page_404')}}">
+                                    Dịch vụ khách hàng</a></li>
+                            <li><a href="{{route('page_404')}}">Chính sách đổi trả</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-2 col-xl-2 mb-10" data-aos="fade-up" data-aos-delay="400">
                     <div class="single-footer-widget aos-init aos-animate">
-                        <h2 class="widget-title">My Account</h2>
+                        <h2 class="widget-title">Tài khoản</h2>
                         <ul class="widget-list">
-                            <li><a href="account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="contact.html">Newsletter</a></li>
-                            <li><a href="contact.html">Help Center</a></li>
-                            <li><a href="contact.html">Conditin</a></li>
-                            <li><a href="contact.html">Term Of Use</a></li>
+                            <li><a href="{{route('page_404')}}">My Account</a></li>
+                            <li><a href="{{route('page_404')}}">Wishlist</a></li>
+                            <li><a href="{{route('page_404')}}">Newsletter</a></li>
+                            <li><a href="{{route('page_404')}}">Help Center</a></li>
+                            <li><a href="{{route('page_404')}}">Conditin</a></li>
+                            <li><a href="{{route('page_404')}}">Term Of Use</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-4 mb-10" data-aos="fade-up" data-aos-delay="500">
                     <div class="single-footer-widget">
-                        <h2 class="widget-title">Newsletter</h2>
+                        <h2 class="widget-title">Cập nhật</h2>
                         <div class="widget-body">
-                            <p class="desc-content mb-0">Get E-mail updates about our latest shop and special offers.</p>
+                            <p class="desc-content mb-0">Nhận thông tin cập nhật qua email về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt.</p>
 
                             <!-- Newsletter Form Start -->
                             <div class="newsletter-form-wrap pt-4">
                                 <form id="mc-form" class="mc-form">
                                     <input type="email" id="mc-email" class="form-control email-box mb-4" placeholder="Enter your email here.." name="EMAIL">
-                                    <button id="mc-submit" class="newsletter-btn btn btn-primary btn-hover-dark" type="submit">Subscribe</button>
+                                    <button id="mc-submit" class="newsletter-btn btn btn-primary btn-hover-dark" type="submit">Đăng ký</button>
                                 </form>
                                 <!-- mailchimp-alerts Start -->
                                 <div class="mailchimp-alerts text-centre">
@@ -88,7 +89,7 @@
             <div class="row align-items-center">
                 <div class="col-12 text-center">
                     <div class="copyright-content">
-                        <p class="mb-0">© 2023 <strong>Destry </strong> Made width <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                        <p class="mb-0">© 2023 <strong>Destry </strong> Made width <i class="fa fa-heart text-danger"></i> by <a href="https://www.facebook.com/thanhnv203">Nguyen Van Thanh</a></p>
                     </div>
                 </div>
             </div>

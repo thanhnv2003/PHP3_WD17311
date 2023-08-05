@@ -36,4 +36,13 @@ class ClientController extends Controller
         return view('client.home', compact('data_new_arrivals', 'data_best_sellers',
             'data_random_3_1', 'data_random_3_2', 'data_daily_deal', 'data_brand'));
     }
+    public function page_404(){
+        return view('client.404');
+    }
+    public function blog_page(){
+        return view('client.blog');
+    }
+    public function contact_page(){
+        return view('client.contact');
+    }
 }

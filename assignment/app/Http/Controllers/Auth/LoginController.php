@@ -60,5 +60,10 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('index');
     }
+    public function myAccount(Request $request){
+        $user = Auth::user();
+//        dd($user->name);
+        return view('client.auth.account', compact('user'));
+    }
 }
 

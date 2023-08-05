@@ -6,27 +6,6 @@
     <script src="{{url('client/assets/js/main.js')}}"></script>
 @endpush
 @section('content')
-    <!-- Breadcrumb Section Start -->
-    <div class="section">
-
-        <!-- Breadcrumb Area Start -->
-{{--        <div class="breadcrumb-area bg-light">--}}
-{{--            <div class="container-fluid">--}}
-{{--                <div class="breadcrumb-content text-center">--}}
-{{--                    <h1 class="title">Single Product Normal</h1>--}}
-{{--                    <ul>--}}
-{{--                        <li>--}}
-{{--                            <a href="index.html">Home </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="active"> Single Product Normal</li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        <!-- Breadcrumb Area End -->
-
-    </div>
-    <!-- Breadcrumb Section End -->
 
     <!-- Shop Section Start -->
     <div class="section section-margin">

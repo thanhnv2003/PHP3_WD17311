@@ -21,7 +21,7 @@
                             <button class="dropdown-toggle" data-bs-toggle="dropdown">USD <i class="fa fa-angle-down"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right animate slideIndropdown">
                                 <li><a class="dropdown-item" href="#">USD</a></li>
-                                <li><a class="dropdown-item" href="#">Pound</a></li>
+                                <li><a class="dropdown-item" href="#">VND</a></li>
                             </ul>
                         </div>
                         <div class="header-top-links">
@@ -33,7 +33,7 @@
 
                 <!-- Header Top Message Start -->
                 <div class="col">
-                    <p class="header-top-message">Ends Monday: $100 off any dining table + 2 sets of chairs. <a href="shop-grid.html">Shop Now</a></p>
+                    <p class="header-top-message">Kết thúc Thứ Hai: Giảm 100.000 VNĐ cho bất kỳ áo sơ mi nào. <a href="{{route('product_shop')}}">Shop Now</a></p>
                 </div>
                 <!-- Header Top Message End -->
 
@@ -68,7 +68,7 @@
 {{--                                    </ul>--}}
                                 </li>
                                 <li class="has-children position-static">
-                                    <a href="#"><span>Shop</span></a>
+                                    <a href="{{route('product_shop')}}"><span>Shop</span></a>
 {{--                                    <ul class="mega-menu row-cols-4">--}}
 {{--                                        <li class="col">--}}
 {{--                                            <h4 class="mega-menu-title">Shop Layout</h4>--}}
@@ -117,25 +117,13 @@
 {{--                                    </ul>--}}
                                 </li>
                                 <li class="has-children">
-                                    <a href="#"><span>Pages</span> <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="faq.html">Faq</a></li>
-                                        <li><a href="404-error.html">404 Error</a></li>
-                                    </ul>
+                                    <a href="{{route('page_404')}}"><span>Pages</span></a>
                                 </li>
                                 <li class="has-children">
-                                    <a href="#"><span>Blog</span> <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                        <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                    </ul>
+                                    <a href="{{route('blog_page')}}"><span>Blog</span></a>
+
                                 </li>
-                                <li><a href="contact.html"> <span>Contact</span></a></li>
+                                <li><a href="{{route('contact_page')}}"> <span>Contact</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -149,10 +137,15 @@
                             <a href="javascript:void(0)" class="header-action-btn header-action-btn-search"><i class="pe-7s-search"></i></a>
                             <!-- Search Header Action Button End -->
 
+                            @if(Auth::check())
+                                <!-- User Account Header Action Button Start -->
+                                <a href="{{route('my_account')}}" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
+                                <!-- User Account Header Action Button End -->
+                            @else
                             <!-- User Account Header Action Button Start -->
                             <a href="{{route('login')}}" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
                             <!-- User Account Header Action Button End -->
-
+                            @endif
                             <!-- Wishlist Header Action Button Start -->
                             <a href="wishlist.html" class="header-action-btn header-action-btn-wishlist d-none d-md-block">
                                 <i class="pe-7s-like"></i>

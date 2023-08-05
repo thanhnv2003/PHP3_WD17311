@@ -28,11 +28,15 @@ use App\Http\Controllers\Client\ProductCliController;
 Route::get('/', [ClientController::class, 'index'])->name('index');
 Route::get('product/{id}', [ProductCliController::class, 'detail'])->name('product_detail');
 Route::get('shop', [ProductCliController::class, 'shop'])->name('product_shop');
+Route::get('pages', [ClientController::class, 'page_404'])->name('page_404');
+Route::get('blog', [ClientController::class, 'blog_page'])->name('blog_page');
+Route::get('contact', [ClientController::class, 'contact_page'])->name('contact_page');
 
 
 Route::match(['GET', 'POST'],'login', [LoginController::class, 'login'])->name('login');
 Route::post('register', [LoginController::class,'register'])->name('register');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::match(['GET', 'POST'],'my-account', [LoginController::class, 'myAccount'])->name('my_account');
 
 Route::prefix('wp-admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/', [HomeController::class,'index'])->name('admin');
