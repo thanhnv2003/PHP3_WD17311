@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('address');
             $table->integer('id_user');
             $table->string('payment_method');
-            $table->integer('total');
+            $table->bigInteger('total')->length(15);
             $table->float('discount');
-            $table->float('into_money');
+            $table->bigInteger('into_money')->length(15);
             $table->json('id_cart')->nullable();
             $table->string('status')->default('Đơn hàng mới');
             $table->timestamps();

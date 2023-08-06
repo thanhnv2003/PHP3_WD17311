@@ -71,7 +71,7 @@
                                             <label class="custom-control-label" for="rememberMe">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="#" class="forget-pwd mb-3">Forget Password?</a>
+                                    <a href="{{route('forgot')}}" class="forget-pwd mb-3">Forget Password?</a>
                                 </div>
                             </div>
                             <!-- Checkbox/Forget Password End -->

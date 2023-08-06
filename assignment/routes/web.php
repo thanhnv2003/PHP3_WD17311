@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\ProductCliController;
+use App\Http\Controllers\Client\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,16 @@ Route::match(['GET', 'POST'],'login', [LoginController::class, 'login'])->name('
 Route::post('register', [LoginController::class,'register'])->name('register');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::match(['GET', 'POST'],'my-account', [LoginController::class, 'myAccount'])->name('my_account');
+Route::post('update-account', [LoginController::class,'updateAddress'])->name('update_address');
+
+Route::match(['GET', 'POST'],'forgot-password', [LoginController::class, 'forgot'])->name('forgot');
+Route::match(['GET','POST'], 'reset-password/{token}', [LoginController::class, 'resetPass'])->name('reset-pass');
+
+Route::post('add-to-cart', [CartController::class, 'add'])->name('add_to_cart');
+Route::get('cart-delete/{id}', [CartController::class, 'delete'])->name('cart_delete');
+Route::get('view-cart', [CartController::class, 'viewCart'])->name('view_cart');
+Route::match(['GET','POST'],'checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::match(['GET','POST'],'coupon', [CartController::class, 'checkCoupon'])->name('coupon');
 
 Route::prefix('wp-admin')->middleware(['auth','admin'])->group(function (){
     Route::get('/', [HomeController::class,'index'])->name('admin');

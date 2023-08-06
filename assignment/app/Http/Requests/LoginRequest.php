@@ -42,6 +42,30 @@ class LoginRequest extends FormRequest
                             'password' => 'required|min:6|max:255'
                         ];
                         break;
+                    case 'myAccount':
+//                        $this->dd('123');
+                        $rules = [
+                            'name' => 'required',
+                            'email' => 'required|email',
+                        ];
+                        break;
+                    case 'updateAddress':
+                        $rules = [
+                            'address' => 'required',
+                            'phone' => 'required|min:10|max:10'
+                        ];
+                        break;
+                    case 'forgot':
+                        $rules = [
+                            'email' => 'required|email',
+                        ];
+                        break;
+                    case 'resetPass':
+                        $rules = [
+                            'token' => 'required',
+                            'password' => 'required|min:6|max:255|confirmed'
+                        ];
+                        break;
                     default:
                         break;
                 endswitch;

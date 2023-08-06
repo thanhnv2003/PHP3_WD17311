@@ -71,83 +71,92 @@
                     <!-- Product Details Image End -->
 
                 </div>
-                <div class="col-lg-7 col-custom">
 
-                    <!-- Product Summery Start -->
-                    <div class="product-summery position-relative">
+                    <div class="col-lg-7 col-custom">
+                        <form action="{{route('add_to_cart')}}" method="post">
+                            @csrf
+                            <!-- Product Summery Start -->
+                            <div class="product-summery position-relative">
 
-                        <!-- Product Head Start -->
-                        <div class="product-head mb-3">
-                            <h2 class="product-title">{{$data_product->name}}</h2>
-                        </div>
-                        <!-- Product Head End -->
+                                <!-- Product Head Start -->
+                                <div class="product-head mb-3">
+                                    <h2 class="product-title">{{$data_product->name}}</h2>
+                                </div>
+                                <!-- Product Head End -->
 
-                        <!-- Price Box Start -->
-                        <div class="price-box mb-2">
-                            <span class="regular-price">{{number_format($data_product->sale_price, 0, ',', '.')}} VNĐ</span>
-                            <span class="old-price"><del>{{number_format($data_product->old_price, 0, ',', '.')}} VNĐ</del></span>
-                        </div>
-                        <!-- Price Box End -->
+                                <!-- Price Box Start -->
+                                <div class="price-box mb-2">
+                                    <span class="regular-price">{{number_format($data_product->sale_price, 0, ',', '.')}} VNĐ</span>
+                                    <span class="old-price"><del>{{number_format($data_product->old_price, 0, ',', '.')}} VNĐ</del></span>
+                                </div>
+                                <!-- Price Box End -->
 
-                        <!-- Rating Start -->
-                        <span class="ratings justify-content-start">
-                            <span class="rating-wrap">
-                                <span class="star" style="width: 100%"></span>
-                            </span>
-                            <span class="rating-num">(4)</span>
-                        </span>
-                        <!-- Rating End -->
+                                <!-- Rating Start -->
+                                <span class="ratings justify-content-start">
+                                    <span class="rating-wrap">
+                                        <span class="star" style="width: 100%"></span>
+                                    </span>
+                                    <span class="rating-num">(4)</span>
+                                </span>
+                                <!-- Rating End -->
 
-                        <!-- Description Start -->
-                        <p class="desc-content mb-5">I must explain to you how all this mistaken idea of denouncing
-                            pleasure and praising pain was born and I will give you a complete account of the system,
-                            and expound the actual teachings of the great explorer of the truth, the master-builder of
-                            human happiness.</p>
-                        <!-- Description End -->
+                                <!-- Description Start -->
+                                <p class="desc-content mb-5">I must explain to you how all this mistaken idea of denouncing
+                                    pleasure and praising pain was born and I will give you a complete account of the system,
+                                    and expound the actual teachings of the great explorer of the truth, the master-builder of
+                                    human happiness.</p>
+                                <!-- Description End -->
 
-                        <!-- Quantity Start -->
-                        <div class="quantity mb-5">
-                            <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box" value="0" type="text" max="{{$data_product->amount}}">
-                                <div class="dec qtybutton"></div>
-                                <div class="inc qtybutton"></div>
+                                <!-- Quantity Start -->
+                                <div class="quantity mb-5">
+                                    <div class="cart-plus-minus">
+                                        <input name="amount" class="cart-plus-minus-box" value="0" type="text" max="{{$data_product->amount}}">
+                                        <div class="dec qtybutton"></div>
+                                        <div class="inc qtybutton"></div>
+                                    </div>
+                                </div>
+                                <!-- Quantity End -->
+
+                                <!-- Cart & Wishlist Button Start -->
+                                @if($user_check == true )
+                                <div class="cart-wishlist-btn mb-4">
+
+
+                                        <input type="hidden" name="data_product" value="{{json_encode($data_product)}}">
+                                        <div class="add-to_cart">
+                                            <button type="submit" class="btn btn-outline-dark btn-hover-primary" >Thêm vào giỏ hàng</button>
+                                        </div>
+
+                                    <div class="add-to-wishlist">
+                                        <a class="btn btn-outline-dark btn-hover-primary" href="wishlist.html">Thêm vào yêu thích</a>
+                                    </div>
+                                </div>
+                                @endif
+                                <!-- Cart & Wishlist Button End -->
+
+                                <!-- Social Shear Start -->
+                                <div class="social-share">
+                                    <span>Chia sẻ :</span>
+                                    <a href="#"><i class="fa fa-facebook-square facebook-color"></i></a>
+                                    <a href="#"><i class="fa fa-twitter-square twitter-color"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin-square linkedin-color"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest-square pinterest-color"></i></a>
+                                </div>
+                                <!-- Social Shear End -->
+
+                                <!-- Product Delivery Policy Start -->
+                                <ul class="product-delivery-policy border-top pt-4 mt-4 border-bottom pb-4">
+                                    <li> <i class="fa fa-check-square"></i> <span>Chính sách bảo mật</span></li>
+                                    <li><i class="fa fa-truck"></i><span>Chính sách giao hàng</span></li>
+                                    <li><i class="fa fa-refresh"></i><span>Chính sách trả hàng</span></li>
+                                </ul>
+                                <!-- Product Delivery Policy End -->
+
                             </div>
-                        </div>
-                        <!-- Quantity End -->
-
-                        <!-- Cart & Wishlist Button Start -->
-                        <div class="cart-wishlist-btn mb-4">
-                            <div class="add-to_cart">
-                                <a class="btn btn-outline-dark btn-hover-primary" href="cart.html">Thêm vào giỏ hàng</a>
-                            </div>
-                            <div class="add-to-wishlist">
-                                <a class="btn btn-outline-dark btn-hover-primary" href="wishlist.html">Thêm vào yêu thích</a>
-                            </div>
-                        </div>
-                        <!-- Cart & Wishlist Button End -->
-
-                        <!-- Social Shear Start -->
-                        <div class="social-share">
-                            <span>Chia sẻ :</span>
-                            <a href="#"><i class="fa fa-facebook-square facebook-color"></i></a>
-                            <a href="#"><i class="fa fa-twitter-square twitter-color"></i></a>
-                            <a href="#"><i class="fa fa-linkedin-square linkedin-color"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-square pinterest-color"></i></a>
-                        </div>
-                        <!-- Social Shear End -->
-
-                        <!-- Product Delivery Policy Start -->
-                        <ul class="product-delivery-policy border-top pt-4 mt-4 border-bottom pb-4">
-                            <li> <i class="fa fa-check-square"></i> <span>Chính sách bảo mật</span></li>
-                            <li><i class="fa fa-truck"></i><span>Chính sách giao hàng</span></li>
-                            <li><i class="fa fa-refresh"></i><span>Chính sách trả hàng</span></li>
-                        </ul>
-                        <!-- Product Delivery Policy End -->
-
-                    </div>
-                    <!-- Product Summery End -->
-
+                            <!-- Product Summery End -->
+                        </form>
                 </div>
+
             </div>
 
             <div class="row section-margin">

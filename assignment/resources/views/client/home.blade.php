@@ -4,6 +4,7 @@
 @endpush
 @push('scripts')
     <script src="{{url('client/assets/js/main.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endpush
 @section('content')
     <!-- Hero/Intro Slider Start -->
@@ -87,6 +88,7 @@
     <!-- Feature Section Start -->
     <div class="section section-margin">
         <div class="container">
+
             <div class="feature-wrap">
                 <div class="row row-cols-lg-4 row-cols-xl-auto row-cols-sm-2 row-cols-1 justify-content-between mb-n5">
                     <!-- Feature Start -->
@@ -228,6 +230,7 @@
 
                                         @foreach($data_new_arrivals as $key => $value)
                                         <!-- Product Start -->
+
                                         <div class="swiper-slide product-wrapper">
 
                                             <!-- Single Product Start -->
@@ -271,13 +274,21 @@
                                                         <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
                                                         <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                    @if($user_check == true )
+                                                    <form action="{{route('add_to_cart')}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="amount" value="1">
+                                                        <input type="hidden" name="data_product" value="{{json_encode($value)}}">
+                                                        <button type="submit" class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                    </form>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <!-- Single Product End -->
 
                                         </div>
                                         <!-- Product End -->
+
                                         @endforeach
 
                                     </div>
@@ -846,7 +857,15 @@
                                                         <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
                                                         <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                    @if($user_check == true )
+                                                        <form action="{{route('add_to_cart')}}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="amount" value="1">
+                                                            <input type="hidden" name="data_product" value="{{json_encode($value)}}">
+                                                            <button type="submit" class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                        </form>
+                                                    @endif
+
                                                 </div>
                                             </div>
                                             <!-- Single Product Deal End -->
@@ -913,7 +932,14 @@
                                                         <span class="new">{{number_format($value->sale_price, 0, ',', '.')}} VNĐ</span>
                                                         <span class="old">{{number_format($value->old_price, 0, ',', '.')}} VNĐ</span>
                                                     </span>
-                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                        @if($user_check == true )
+                                                            <form action="{{route('add_to_cart')}}" method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="amount" value="1">
+                                                                <input type="hidden" name="data_product" value="{{json_encode($value)}}">
+                                                                <button type="submit" class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                                            </form>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <!-- Single Product Deal End -->

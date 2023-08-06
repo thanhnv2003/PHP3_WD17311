@@ -9,7 +9,7 @@
     <!-- My Account Section Start -->
     <div class="section section-margin">
         <div class="container">
-
+            @include('client.layout.errors')
             <div class="row">
                 <div class="col-lg-12">
 
@@ -161,15 +161,24 @@
                                     <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                         <div class="myaccount-content">
                                             <h3 class="title">Địa chỉ thanh toán</h3>
-                                            <address>
-                                                <p><strong>Alex Aya</strong></p>
-                                                <p>1234 Market ##, Suite 900 <br>
-                                                    Lorem Ipsum, ## 12345</p>
-                                                <p>Mobile: (123) 123-456789</p>
-                                            </address>
-                                            <a href="#" class="btn btn btn-dark btn-hover-primary rounded-0"><i
-                                                    class="fa fa-edit me-2"></i>
-                                                Sửa địa chỉ</a>
+                                            <form action="{{route('update_address')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="user_id" value="{{$user->id}}">
+                                                <div class="single-input-item mb-3">
+                                                    <label for="display-name" class="required mb-1">Số điện thoại</label>
+                                                    <input name="phone" type="text" id="display-name"
+                                                           placeholder="Phone number" value="{{$user->phone}}" />
+                                                </div>
+                                                <div class="single-input-item mb-3">
+                                                    <label for="email" class="required mb-1">Địa chỉ nhà</label>
+                                                    <input name="address" type="text" id="email"
+                                                           placeholder="Home Address" value="{{$user->address}}" />
+                                                </div>
+                                                <div class="single-input-item single-item-button">
+                                                    <input type="submit" name="btnAddress" value="Lưu thay đổi"
+                                                           class="btn btn btn-dark btn-hover-primary rounded-0">
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
@@ -179,28 +188,31 @@
                                         <div class="myaccount-content">
                                             <h3 class="title">Chi tiết tài khoản</h3>
                                             <div class="account-details-form">
-                                                <form action="#">
+                                                <form action="{{route('my_account')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="user_id" value="{{$user->id}}">
                                                     <div class="single-input-item mb-3">
                                                         <label for="display-name" class="required mb-1">Tên hiển thị</label>
-                                                        <input type="text" id="display-name"
-                                                               placeholder="Display name" />
+                                                        <input name="name" type="text" id="display-name"
+                                                               placeholder="Display name" value="{{$user->name}}" />
                                                     </div>
                                                     <div class="single-input-item mb-3">
-                                                        <label for="email" class="required mb-1">Địa chỉ emails</label>
-                                                        <input type="email" id="email" placeholder="Email Address" />
+                                                        <label for="email" class="required mb-1">Địa chỉ email</label>
+                                                        <input name="email" type="email" id="email"
+                                                               placeholder="Email Address" value="{{$user->email}}" />
                                                     </div>
                                                     <fieldset>
                                                         <legend>Password change</legend>
                                                         <div class="single-input-item mb-3">
                                                             <label for="current-pwd" class="required mb-1">Mật khẩu cũ</label>
-                                                            <input type="password" id="current-pwd"
+                                                            <input name="old_password" type="password" id="current-pwd"
                                                                    placeholder="Current Password" />
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item mb-3">
                                                                     <label for="new-pwd" class="required mb-1">Mật khẩu mới</label>
-                                                                    <input type="password" id="new-pwd"
+                                                                    <input name="new_password" type="password" id="new-pwd"
                                                                            placeholder="New Password" />
                                                                 </div>
                                                             </div>
@@ -208,15 +220,15 @@
                                                                 <div class="single-input-item mb-3">
                                                                     <label for="confirm-pwd"
                                                                            class="required mb-1">Nhập lại mật khẩu</label>
-                                                                    <input type="password" id="confirm-pwd"
+                                                                    <input name="new_password_confirmation" type="password" id="confirm-pwd"
                                                                            placeholder="Confirm Password" />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </fieldset>
                                                     <div class="single-input-item single-item-button">
-                                                        <button
-                                                            class="btn btn btn-dark btn-hover-primary rounded-0">Lưu thay đổi</button>
+                                                        <input type="submit" name="btnSm" value="Lưu thay đổi"
+                                                            class="btn btn btn-dark btn-hover-primary rounded-0">
                                                     </div>
                                                 </form>
                                             </div>

@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Mail\ResetPasswordMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
+
 
 class LoginController extends Controller
 {
@@ -58,12 +63,90 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        Session::flush();
         return redirect()->route('index');
     }
-    public function myAccount(Request $request){
+    public function myAccount(LoginRequest $request){
         $user = Auth::user();
-//        dd($user->name);
+//                dd($user);
+        if ($request->isMethod('POST') && $request->btnSm != ''){
+
+            if ($request->old_password != ''){
+                $user = User::findOrFail($request->user_id);
+
+                if (!Hash::check($request->old_password, $user->password)) {
+                    return back()->withErrors([
+                        'old_password' => 'Mật khẩu cũ không chính xác.',
+                    ]);
+                }
+
+                if ($request->new_password !== $request->new_password_confirmation) {
+                    return back()->withErrors([
+                        'new_password' => 'Mật khẩu mới không khớp.',
+                    ]);
+                }
+                $request->validate([
+                    'new_password' => ['required', 'min:6', 'max:255'],
+                ]);
+                $user->password = Hash::make($request->new_password);
+            }
+
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+
+            return redirect()->route('my_account')->withSuccess('Cập nhật thành công.');
+        }
+
         return view('client.auth.account', compact('user'));
+    }
+    public function updateAddress(LoginRequest $request){
+        if ($request->isMethod('POST') && $request->btnAddress != ''){
+            $user = User::findOrFail($request->user_id);
+
+            $user->phone = $request->phone;
+            $user->address = $request->address;
+            $user->save();
+            return redirect()->route('my_account')->withSuccess('Cập nhật thành công.');
+        }
+    }
+    public function forgot(LoginRequest $request){
+        if ($request->isMethod('POST') && $request->btnForgot != ''){
+            $email = $request->email;
+            $user = User::where('email', $email)->first();
+            if ($user){
+                $token = Str::random(64);
+                DB::table('password_resets')->insert([
+                   'email' =>$email,
+                   'token' => $token,
+                   'created_at' => now()
+                ]);
+                $resetLink = url('/reset-password/'.$token);
+                Mail::to($email)->send(new ResetPasswordMail($resetLink));
+                Session::flash('success', 'Yêu cầu đặt lại mật khẩu đã được gửi đến email của bạn.');
+                return back();
+            }else{
+                Session::flash('error', 'Email này chưa được đăng ký! Vui lòng thử lại');
+                return back();
+            }
+        }
+        return view('client.auth.forgot');
+    }
+    public function resetPass(LoginRequest $request, $token){
+//        dd($token);
+        if ($request->isMethod('POST') && $request->btnReset != ''){
+            $token = $request->token;
+            $email = DB::table('password_resets')->where('token','=',$token)
+                ->value('email');
+            if (!$email){
+                Session::flash('error', 'Mã xác thực không hợp hợp lệ');
+                return redirect()->back();
+            }
+            User::where('email', $email)->update(['password' => Hash::make($request->password)]);
+            DB::table('password_resets')->where('token', $token)->delete();
+            return redirect()->route('login');
+        }
+        return view('client.auth.reset-password',compact('token'));
     }
 }
 

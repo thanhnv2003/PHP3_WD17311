@@ -85,7 +85,14 @@
                                     </span>
                                     <div class="shop-list-btn">
                                         <a title="Wishlist" href="#" class="btn btn-sm btn-outline-dark btn-hover-primary wishlist"><i class="fa fa-heart"></i></a>
-                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary" title="Add To Cart">Thêm vào giỏ hàng</button>
+                                        @if($user_check == true )
+                                            <form action="{{route('add_to_cart')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="amount" value="1">
+                                                <input type="hidden" name="data_product" value="{{json_encode($value)}}">
+                                                <button type="submit" class="btn btn-sm btn-outline-dark btn-hover-primary">Thêm vào giỏ hàng</button>
+                                            </form>
+                                        @endif
                                         <a title="Compare" href="#" class="btn btn-sm btn-outline-dark btn-hover-primary compare"><i class="fa fa-random"></i></a>
                                     </div>
                                 </div>

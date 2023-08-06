@@ -155,7 +155,20 @@
                             <!-- Shopping Cart Header Action Button Start -->
                             <a href="javascript:void(0)" class="header-action-btn header-action-btn-cart">
                                 <i class="pe-7s-shopbag"></i>
-                                <span class="header-action-num">3</span>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                <?php
+                                    $user = \Illuminate\Support\Facades\Auth::user();
+                                    if ($user){
+                                        $product = \Illuminate\Support\Facades\DB::table('carts')->where('id_user',$user->id)->where('status',0)->get();
+                                        if ($product != ''){
+                                            $total = count($product);
+                                        }else{
+                                            $total = 0;
+                                        }
+                                    }
+                                ?>
+                                    <span class="header-action-num">{{$total}}</span>
+                                @endif
                             </a>
                             <!-- Shopping Cart Header Action Button End -->
 
@@ -346,22 +359,27 @@
             <!-- Offcanvas Cart Content Start -->
             <div class="offcanvas-cart-content">
                 <!-- Offcanvas Cart Title Start -->
-                <h2 class="offcanvas-cart-title mb-10">Shopping Cart</h2>
+                <h2 class="offcanvas-cart-title mb-10">Giỏ hàng</h2>
                 <!-- Offcanvas Cart Title End -->
 
+                @if(\Illuminate\Support\Facades\Auth::check())
+                @foreach($product as $key => $value)
+                <?php
+                        $detail = \Illuminate\Support\Facades\DB::table('products')->where('id', $value->id_product)->first();
+                        ?>
                 <!-- Cart Product/Price Start -->
                 <div class="cart-product-wrapper mb-6">
 
                     <!-- Single Cart Product Start -->
                     <div class="single-cart-product">
                         <div class="cart-product-thumb">
-                            <a href="single-product.html"><img src="assets/images/products/small-product/1.jpg" alt="Cart Product"></a>
+                            <a href="{{route('product_detail', [$detail->id])}}"><img src="{{asset('storage/'.json_decode($detail->image)[0])}}" alt="Cart Product"></a>
                         </div>
                         <div class="cart-product-content">
-                            <h3 class="title"><a href="single-product.html">Brother Hoddies in Grey</a></h3>
+                            <h3 class="title"><a href="{{route('product_detail', [$detail->id])}}">{{$detail->name}}</a></h3>
                             <span class="price">
-								<span class="new">$38.50</span>
-                                <span class="old">$40.00</span>
+								<span class="new">{{number_format($detail->sale_price, 0, ',', '.')}} VNĐ</span>
+                                <span class="old">{{number_format($detail->old_price, 0, ',', '.')}} VNĐ</span>
                                 </span>
                         </div>
                     </div>
@@ -369,81 +387,44 @@
 
                     <!-- Product Remove Start -->
                     <div class="cart-product-remove">
-                        <a href="#"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('cart_delete',[$value->id])}}"><i class="fa fa-trash"></i></a>
                     </div>
                     <!-- Product Remove End -->
 
                 </div>
                 <!-- Cart Product/Price End -->
+                @endforeach
 
-                <!-- Cart Product/Price Start -->
-                <div class="cart-product-wrapper mb-6">
+                    @if(count($product) > 0)
+                    <!-- Cart Product Total Start -->
+                    <div class="cart-product-total">
+                        <?php
+                            $sum = 0;
+                            for ($i = 0; $i < count($product); $i++){
+                                $total = $product[$i]->price * $product[$i]->amount_product;
+                                $sum += $total;
+                            }
 
-                    <!-- Single Cart Product Start -->
-                    <div class="single-cart-product">
-                        <div class="cart-product-thumb">
-                            <a href="single-product.html"><img src="assets/images/products/small-product/2.jpg" alt="Cart Product"></a>
-                        </div>
-                        <div class="cart-product-content">
-                            <h3 class="title"><a href="single-product.html">Basic Jogging Shorts</a></h3>
-                            <span class="price">
-								<span class="new">$14.50</span>
-                                <span class="old">$18.00</span>
-                                </span>
-                        </div>
+                            ?>
+                        <span class="value">Tổng tiền</span>
+                        <span class="price">{{number_format($sum, 0, ',', '.')}} VNĐ</span>
                     </div>
-                    <!-- Single Cart Product End -->
+                    <!-- Cart Product Total End -->
 
-                    <!-- Product Remove Start -->
-                    <div class="cart-product-remove">
-                        <a href="#"><i class="fa fa-trash"></i></a>
+                    <!-- Cart Product Button Start -->
+                    <div class="cart-product-btn mt-4">
+                        <a href="{{route('view_cart')}}" class="btn btn-dark btn-hover-primary rounded-0 w-100">Giỏ hàng</a>
+                        <a href="{{route('checkout')}}" class="btn btn-dark btn-hover-primary rounded-0 w-100 mt-4">Thanh toán</a>
                     </div>
-                    <!-- Product Remove End -->
-
-                </div>
-                <!-- Cart Product/Price End -->
-
-                <!-- Cart Product/Price Start -->
-                <div class="cart-product-wrapper mb-6">
-
-                    <!-- Single Cart Product Start -->
-                    <div class="single-cart-product">
-                        <div class="cart-product-thumb">
-                            <a href="single-product.html"><img src="assets/images/products/small-product/3.jpg" alt="Cart Product"></a>
+                    @else
+                        <!-- Cart Product Total Start -->
+                        <div class="cart-product-total">
+                            <span class="value">Chưa có sản phẩm</span>
                         </div>
-                        <div class="cart-product-content">
-                            <h3 class="title"><a href="single-product.html">Enjoy The Rest T-Shirt</a></h3>
-                            <span class="price">
-								<span class="new">$20.00</span>
-                                <span class="old">$21.00</span>
-                                </span>
-                        </div>
-                    </div>
-                    <!-- Single Cart Product End -->
-
-                    <!-- Product Remove Start -->
-                    <div class="cart-product-remove">
-                        <a href="#"><i class="fa fa-trash"></i></a>
-                    </div>
-                    <!-- Product Remove End -->
-
-                </div>
-                <!-- Cart Product/Price End -->
-
-                <!-- Cart Product Total Start -->
-                <div class="cart-product-total">
-                    <span class="value">Subtotal</span>
-                    <span class="price">220$</span>
-                </div>
-                <!-- Cart Product Total End -->
-
-                <!-- Cart Product Button Start -->
-                <div class="cart-product-btn mt-4">
-                    <a href="cart.html" class="btn btn-dark btn-hover-primary rounded-0 w-100">View cart</a>
-                    <a href="checkout.html" class="btn btn-dark btn-hover-primary rounded-0 w-100 mt-4">Checkout</a>
-                </div>
+                        <!-- Cart Product Total End -->
+                    @endif
                 <!-- Cart Product Button End -->
-
+                @endif
             </div>
             <!-- Offcanvas Cart Content End -->
 
