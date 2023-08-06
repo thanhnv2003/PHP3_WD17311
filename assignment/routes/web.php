@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\EditorController;
 use App\Http\Controllers\Admin\ImageProductController;
 use App\Http\Controllers\Admin\PromotionsController;
 use App\Http\Controllers\Admin\BannersController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\OrderController;
 
 use App\Http\Controllers\Auth\LoginController;
 
@@ -43,6 +45,7 @@ Route::post('update-account', [LoginController::class,'updateAddress'])->name('u
 Route::match(['GET', 'POST'],'forgot-password', [LoginController::class, 'forgot'])->name('forgot');
 Route::match(['GET','POST'], 'reset-password/{token}', [LoginController::class, 'resetPass'])->name('reset-pass');
 
+//Route::get('view-cart', [CartController::class, 'view'])
 Route::post('add-to-cart', [CartController::class, 'add'])->name('add_to_cart');
 Route::get('cart-delete/{id}', [CartController::class, 'delete'])->name('cart_delete');
 Route::get('view-cart', [CartController::class, 'viewCart'])->name('view_cart');
@@ -79,6 +82,16 @@ Route::prefix('wp-admin')->middleware(['auth','admin'])->group(function (){
     Route::get('banners', [BannersController::class, 'list'])->name('banner.list');
     Route::match(['GET', 'POST'],'banners/edit/{id}', [BannersController::class, 'edit'])->name('banner.edit');
     Route::get('banners/delete/{id}', [BannersController::class, 'delete'])->name('banner.delete');
+
+    Route::get('users', [UsersController::class, 'list'])->name('user.list');
+    Route::match(['GET', 'POST'],'users/add', [UsersController::class, 'add'])->name('user.add');
+    Route::match(['GET', 'POST'],'users/edit/{id}', [UsersController::class, 'edit'])->name('user.edit');
+    Route::get('users/delete/{id}', [UsersController::class, 'delete'])->name('user.delete');
+
+    Route::get('orders', [OrderController::class, 'list'])->name('order.list');
+    Route::match(['GET', 'POST'],'orders/detail/{id}', [OrderController::class, 'detail'])->name('order.detail');
+    Route::match(['GET', 'POST'],'orders/edit/{id}', [OrderController::class, 'edit'])->name('order.edit');
+    Route::get('orders/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
 });
 
 

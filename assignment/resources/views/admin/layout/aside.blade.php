@@ -9,13 +9,13 @@
 {{--                        <span class="toggle-icon"></span>--}}
                     </a>
                 </li>
-                <li class="has-child">
-                    <a href="" class="">
-                        <span class="nav-icon uil uil-window-section"></span>
-                        <span class="menu-text">Layouts</span>
+{{--                <li class="has-child">--}}
+{{--                    <a href="" class="">--}}
+{{--                        <span class="nav-icon uil uil-window-section"></span>--}}
+{{--                        <span class="menu-text">Layouts</span>--}}
 {{--                        <span class="toggle-icon"></span>--}}
-                    </a>
-                </li>
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li class="menu-title mt-30">
                     <span>QUẢN LÝ CỬA HÀNG</span>
                 </li>
@@ -49,46 +49,58 @@
                         <span class="menu-text">Banner</span>
                     </a>
                 </li>
-                <li class="has-child">
-                    <a href="#" class="">
-                        <span class="nav-icon uil uil-users-alt"></span>
-                        <span class="menu-text">Users</span>
-                        <span class="toggle-icon"></span>
-                    </a>
-                    <ul>
-                        <li class="">
-                            <a href="users-membar.html">Team</a>
-                        </li>
-                        <li class="">
-                            <a href="users-card.html">Users Grid</a>
-                        </li>
-                        <li class="">
-                            <a href="users-list.html">Users
-                                List</a>
-                        </li>
-                        <li class="">
-                            <a href="users-card2.html">Users Grid
-                                style</a>
-                        </li>
-                        <li class="">
-                            <a href="users-group.html">Users
-                                Group</a>
-                        </li>
-                        <li class="">
-                            <a href="user-info.html">Add User</a>
-                        </li>
-                        <li class="">
-                            <a href="users-datatable.html">Users
-                                Table</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="note.html">
-                        <span class="nav-icon uil uil-clipboard-notes"></span>
-                        <span class="menu-text">Note</span>
+                <li>
+                    <a href="{{route('user.list')}}" class="">
+                        <span class="nav-icon uil uil-calendar-alt"></span>
+                        <span class="menu-text">User</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('order.list')}}" class="">
+                        <span class="nav-icon uil uil-calendar-alt"></span>
+                        <span class="menu-text">Đơn hàng</span>
+                    </a>
+                </li>
+{{--                <li class="has-child">--}}
+{{--                    <a href="#" class="">--}}
+{{--                        <span class="nav-icon uil uil-users-alt"></span>--}}
+{{--                        <span class="menu-text">Users</span>--}}
+{{--                        <span class="toggle-icon"></span>--}}
+{{--                    </a>--}}
+{{--                    <ul>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-membar.html">Team</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-card.html">Users Grid</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-list.html">Users--}}
+{{--                                List</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-card2.html">Users Grid--}}
+{{--                                style</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-group.html">Users--}}
+{{--                                Group</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="user-info.html">Add User</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="users-datatable.html">Users--}}
+{{--                                Table</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li class="">--}}
+{{--                    <a href="note.html">--}}
+{{--                        <span class="nav-icon uil uil-clipboard-notes"></span>--}}
+{{--                        <span class="menu-text">Note</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </div>
     </div>

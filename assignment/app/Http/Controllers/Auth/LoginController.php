@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Mail\ResetPasswordMail;
+use App\Models\bill;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,8 @@ class LoginController extends Controller
     }
     public function myAccount(LoginRequest $request){
         $user = Auth::user();
+        $bill = bill::where('id_user', $user->id)->get();
+//        dd($bill);
 //                dd($user);
         if ($request->isMethod('POST') && $request->btnSm != ''){
 
@@ -98,7 +101,7 @@ class LoginController extends Controller
             return redirect()->route('my_account')->withSuccess('Cập nhật thành công.');
         }
 
-        return view('client.auth.account', compact('user'));
+        return view('client.auth.account', compact('user', 'bill'));
     }
     public function updateAddress(LoginRequest $request){
         if ($request->isMethod('POST') && $request->btnAddress != ''){

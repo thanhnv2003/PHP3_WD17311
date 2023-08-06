@@ -72,33 +72,17 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach($bill as $key => $value)
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Aug 22, 2023</td>
-                                                        <td>Pending</td>
-                                                        <td>$3000</td>
+                                                        <td>{{$key+1}}</td>
+                                                        <td>{{$value->updated_at}}</td>
+                                                        <td>{{$value->status}}</td>
+                                                        <td>{{number_format($value->into_money, 0, ',', '.')}} VNĐ</td>
                                                         <td><a href="cart.html"
                                                                class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>July 22, 2023</td>
-                                                        <td>Approved</td>
-                                                        <td>$200</td>
-                                                        <td><a href="cart.html"
-                                                               class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>June 12, 2019</td>
-                                                        <td>On Hold</td>
-                                                        <td>$990</td>
-                                                        <td><a href="cart.html"
-                                                               class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">View</a>
-                                                        </td>
-                                                    </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -60,7 +60,7 @@ class CartController extends Controller
             $data->id_user = $user->id;
             $data->payment_method = 'Thanh toán khi nhận hàng';
             $data->total = $request->total;
-            $data->discount = Session::get('coupon')->price;
+            $data->discount = isset(Session::get('coupon')->price) == true ? Session::get('coupon')->price : 0;
             $data->into_money = $request->into_money;
             $data->id_cart = json_encode($product);
             $data->save();
