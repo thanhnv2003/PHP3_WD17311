@@ -128,7 +128,7 @@
                                         </div>
 
                                     <div class="add-to-wishlist">
-                                        <a class="btn btn-outline-dark btn-hover-primary" href="wishlist.html">Thêm vào yêu thích</a>
+                                        <a class="btn btn-outline-dark btn-hover-primary" href="#">Thêm vào yêu thích</a>
                                     </div>
                                 </div>
                                 @endif

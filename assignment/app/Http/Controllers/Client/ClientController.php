@@ -35,10 +35,13 @@ class ClientController extends Controller
         //data_branđ
         $data_brand = DB::table('brands')->inRandomOrder()->limit(5)->get();
 
+        //banner
+        $data_banner = DB::table('banners')->get();
+//        dd($data_banner);
 
 //        dd($data_new_arrivals);
         return view('client.home', compact('data_new_arrivals', 'data_best_sellers',
-            'data_random_3_1', 'data_random_3_2', 'data_daily_deal', 'data_brand', 'user_check'));
+            'data_random_3_1', 'data_random_3_2', 'data_daily_deal', 'data_brand', 'user_check','data_banner'));
     }
     public function page_404(){
         return view('client.404');

@@ -12,7 +12,7 @@ class BannersController extends Controller
 {
     //
     public function list(){
-//        for($i = 0; $i< 7; $i++){
+//        for($i = 0; $i< 2; $i++){
 //            $data = new banner;
 //            $data->image = 'sdgdgdgdg625343443';
 //            $data->description = 'abc123456';

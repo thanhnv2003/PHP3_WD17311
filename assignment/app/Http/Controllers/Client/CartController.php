@@ -66,7 +66,7 @@ class CartController extends Controller
             $data->save();
             $update_cart = cart::where('id_user',$user->id)->update(['status' => 1]);
             Session::forget('coupon');
-            return redirect()->route('index');
+            return redirect()->route('index')->with('success', 'Đặt hàng thành công');
         }
         return view('client.cart.checkout',compact('user', 'product'));
     }
@@ -82,5 +82,19 @@ class CartController extends Controller
                 return back();
             }
         }
+    }
+    public function cliViewCart($id){
+        $user = Auth::user();
+        $bill = DB::table('bills')->where('id',$id)->first();
+        $product = json_decode($bill->id_cart);
+
+        return view('client.cart.view-cart',compact('bill', 'product'));
+    }
+    public function cancelOrder($id){
+        $data = bill::find($id);
+        $data->status = 'Đã hủy đơn';
+        $data->save();
+        Session::flash('success', 'Huỷ đơn hàng thành công');
+        return back();
     }
 }

@@ -45,7 +45,8 @@ Route::post('update-account', [LoginController::class,'updateAddress'])->name('u
 Route::match(['GET', 'POST'],'forgot-password', [LoginController::class, 'forgot'])->name('forgot');
 Route::match(['GET','POST'], 'reset-password/{token}', [LoginController::class, 'resetPass'])->name('reset-pass');
 
-//Route::get('view-cart', [CartController::class, 'view'])
+Route::get('your-view-cart/{id}', [CartController::class, 'cliViewCart'])->name('cli_cart');
+Route::get('cancel-order/{id}', [CartController::class, 'cancelOrder'])->name('cancel-order');
 Route::post('add-to-cart', [CartController::class, 'add'])->name('add_to_cart');
 Route::get('cart-delete/{id}', [CartController::class, 'delete'])->name('cart_delete');
 Route::get('view-cart', [CartController::class, 'viewCart'])->name('view_cart');

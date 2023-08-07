@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([ProductSeeder::class, CategoriesSeeder::class, brandsSeeder::class]);
+        $this->call([ProductSeeder::class, CategoriesSeeder::class, brandsSeeder::class, bannerSeeder::class]);
         // \App\Models\User::factory(10)->create();
         $admin = [
            'name' => 'Nguyen Van Thanh',
@@ -25,5 +25,11 @@ class DatabaseSeeder extends Seeder
             'role' => 'Admin'
         ] ;
         DB::table('users')->insert($admin);
+        $promotion = [
+            'name' => 'Khách hàng mới',
+            'code' => 'XINCHAO',
+            'price' => 30000
+        ];
+        DB::table('promotions')->insert($promotion);
     }
 }

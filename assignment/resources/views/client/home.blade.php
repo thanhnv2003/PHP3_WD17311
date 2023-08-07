@@ -7,6 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endpush
 @section('content')
+    @if(session('success'))
+        <script>
+            alert('{{ session('success') }}');
+        </script>
+    @endif
     <!-- Hero/Intro Slider Start -->
     <div class="section">
         <div class="hero-slider">
@@ -17,7 +22,7 @@
 
                         <!-- Hero Slider Background Image Start-->
                         <div class="hero-slide-bg">
-                            <img src="{{asset('client/assets/images/slider/slide-2.jpg')}}" alt="" />
+                            <img src="{{asset('storage/'.$data_banner[0]->image)}}" alt="" />
                         </div>
                         <!-- Hero Slider Background Image End-->
 
@@ -46,7 +51,7 @@
 
                         <!-- Hero Slider Background Image Start -->
                         <div class="hero-slide-bg">
-                            <img src="{{asset('client/assets/images/slider/slide-2-2.jpg')}}" alt="" />
+                            <img src="{{asset('storage/'.$data_banner[1]->image)}}" alt="" />
                         </div>
                         <!-- Hero Slider Background Image End -->
 
