@@ -123,10 +123,11 @@
 
 
                                         <input type="hidden" name="data_product" value="{{json_encode($data_product)}}">
+                                    @if($data_product->amount > 0)
                                         <div class="add-to_cart">
                                             <button type="submit" class="btn btn-outline-dark btn-hover-primary" >Thêm vào giỏ hàng</button>
                                         </div>
-
+                                    @endif
                                     <div class="add-to-wishlist">
                                         <a class="btn btn-outline-dark btn-hover-primary" href="#">Thêm vào yêu thích</a>
                                     </div>

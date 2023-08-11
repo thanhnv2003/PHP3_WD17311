@@ -2,7 +2,7 @@
     <nav class="navbar navbar-light">
         <div class="navbar-left">
             <div class="logo-area">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('admin')}}">
                     <img class="dark" src="{{asset('admin/img/logo-dark.png')}}" alt="logo">
                     <img class="light" src="{{asset('admin/img/logo-white.png')}}" alt="logo">
                 </a>
@@ -1032,7 +1032,7 @@
                     <div class="dropdown-custom">
                         <a href="javascript:;" class="nav-item-toggle"><img src="{{asset('admin/img/author-nav.jpg')}}" alt=""
                                                                             class="rounded-circle">
-                            <span class="nav-item__title">Danial<i
+                            <span class="nav-item__title">{{\Illuminate\Support\Facades\Auth::user()->name}}<i
                                     class="las la-angle-down nav-item__arrow"></i></span>
                         </a>
                         <div class="dropdown-parent-wrapper">
@@ -1042,35 +1042,35 @@
                                         <img src="img/author-nav.jpg" alt="" class="rounded-circle">
                                     </div>
                                     <div>
-                                        <h6>Rabbi Islam Rony</h6>
-                                        <span>UI Designer</span>
+                                        <h6>{{\Illuminate\Support\Facades\Auth::user()->name}}</h6>
+                                        <span>Developer</span>
                                     </div>
                                 </div>
                                 <div class="nav-author__options">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{route('my_account')}}">
                                                 <i class="uil uil-user"></i> Profile</a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{route('my_account')}}">
                                                 <i class="uil uil-setting"></i>
                                                 Settings</a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{route('my_account')}}">
                                                 <i class="uil uil-key-skeleton"></i> Billing</a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{route('my_account')}}">
                                                 <i class="uil uil-users-alt"></i> Activity</a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{route('my_account')}}">
                                                 <i class="uil uil-bell"></i> Help</a>
                                         </li>
                                     </ul>
-                                    <a href="#" class="nav-author__signout">
+                                    <a href="{{route('logout')}}" class="nav-author__signout">
                                         <i class="uil uil-sign-out-alt"></i> Sign Out</a>
                                 </div>
                             </div>

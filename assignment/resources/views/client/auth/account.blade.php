@@ -80,9 +80,11 @@
                                                         <td>{{number_format($value->into_money, 0, ',', '.')}} VNĐ</td>
                                                         <td><a href="{{route('cli_cart', [$value->id])}}"
                                                                class="btn btn btn-dark btn-hover-primary btn-sm rounded-0">Chi tiết</a>
+                                                            @if($value->status == 'Đơn hàng mới')
                                                             <a href="{{route('cancel-order', [$value->id])}}"
                                                                class="btn btn btn-dark btn-hover-primary btn-sm rounded-0"
                                                                onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng?')">Hủy</a>
+                                                            @endif
                                                         </td>
                                                     </tr>
                                                     @endforeach

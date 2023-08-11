@@ -17,12 +17,14 @@ class CartController extends Controller
     public function add(Request $request){
         if ($request->isMethod('POST')){
 //            dd($request->data_product);
+
             $product = json_decode($request->data_product);
             $user = Auth::user();
 //            dd($user);
             $id = $product->id;
             $id_user = $user->id;
             $cart = cart::where('id_product', $id)->where('id_user',$id_user)->where('status',0)->first();
+
             if ($cart){
                 $cart->amount_product += $request->amount;
                 $cart->save();
