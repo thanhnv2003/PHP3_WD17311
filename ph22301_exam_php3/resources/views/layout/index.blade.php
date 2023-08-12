@@ -35,6 +35,23 @@
 </nav>
 
 {{--@include('layout.home')--}}
+@if(Session::has('success'))
+    <script>
+        alert("{{Session::get('success')}}")
+    </script>
+@endif
+@if(Session::has('error'))
+    <script>
+        alert("{{Session::get('error')}}")
+    </script>
+@endif
+@if($errors->any())
+    <script>
+        @foreach($errors->all() as $error)
+        alert("{{$error}}")
+        @endforeach
+    </script>
+@endif
 @yield('content')
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3">

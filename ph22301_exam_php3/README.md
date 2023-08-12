@@ -17,11 +17,11 @@ tạo dữ liệu mẫu và reset toàn bộ
 php artisan migrate:fresh --seed
 Tạo ra từng seed riêng ứng với db
 
-php artisan make:seeder brandsSeeder (Ví dụ tạo seed dành cho bảng user )
+php artisan make:seeder StudentSeeder (Ví dụ tạo seed dành cho bảng user )
 
 Sử dụng factory để tạo dữ liệu mẫu
 
-php artisan make:factory brandsFactory --model=brands
+php artisan make:factory StudentFactory --model=Student
 
 Tạo controller
 Php artisan make:controller TestController
@@ -33,7 +33,7 @@ php artisan storage:link
 
 #tạo controler resouce
 php artisan make:controller ProductController --api
-php artisan make:resource ProductResource
+php artisan make:resource StudentResource
 php artisan route:list --name=products
 
 
