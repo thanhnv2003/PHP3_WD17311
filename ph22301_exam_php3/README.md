@@ -21,7 +21,7 @@ php artisan make:seeder StudentSeeder (Ví dụ tạo seed dành cho bảng user
 
 Sử dụng factory để tạo dữ liệu mẫu
 
-php artisan make:factory StudentFactory --model=Student
+php artisan make:factory StudentsFactory --model=Students
 
 Tạo controller
 Php artisan make:controller TestController
@@ -32,7 +32,7 @@ Tạo storage link
 php artisan storage:link
 
 #tạo controler resouce
-php artisan make:controller ProductController --api
+php artisan make:controller StudentController --api
 php artisan make:resource StudentResource
 php artisan route:list --name=products
 
