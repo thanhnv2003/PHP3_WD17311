@@ -33,6 +33,7 @@ class ResetPasswordMail extends Mailable
     {
         return new Envelope(
             subject: 'Reset Password Mail',
+
         );
     }
 

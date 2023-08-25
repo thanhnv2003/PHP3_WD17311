@@ -1,48 +1,7 @@
-Tạo file migration
-php artisan make:migration create_tests_table
-
-hoặc tại file model và cả file migrate
-php artisan make:model test -m
-
-Đồng bộ file migration
-php artisan migrate
-
-Xóa file file migration
-php artisan migrate:rollback
-
-
-Tạo dữ liệu mẫu test
-php artisan db:seed
-tạo dữ liệu mẫu và reset toàn bộ
-php artisan migrate:fresh --seed
-Tạo ra từng seed riêng ứng với db
-
-php artisan make:seeder StudentSeeder (Ví dụ tạo seed dành cho bảng user )
-
-Sử dụng factory để tạo dữ liệu mẫu
-
-php artisan make:factory StudentsFactory --model=Students
-
-Tạo controller
-Php artisan make:controller TestController
-Php artisan make:request TestRequest
-Tạo model và các thức khác cũng tương tự
-
-Tạo storage link
-php artisan storage:link
-
-#tạo controler resouce
-php artisan make:controller ApiRest/StudentController --api
-php artisan make:resource StudentResource
-php artisan route:list --name=products
-
-
-
-
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
@@ -65,8 +24,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
